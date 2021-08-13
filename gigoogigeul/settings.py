@@ -24,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # 원래 비밀번호 찾기를 할 때 인증 메일을 받기 위해 시크릿키를 따로 빼려고 했으나 보안문제가 생겨서 포기하고,
 # secret_key는 json으로 빼서 주석처리함 = 건들지 않았다
-SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY','django-insecure-gm()=a%f2*pg*j4a*xlxvpl=shd8p#1z-df)drpp(^admt6w!a')
+SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'django-insecure-gm()=a%f2*pg*j4a*xlxvpl=shd8p#1z-df)drpp(^admt6w!a')
 
 
 
