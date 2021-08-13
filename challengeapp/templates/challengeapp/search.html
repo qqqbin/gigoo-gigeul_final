@@ -1,0 +1,72 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" type="text/css" href="{% static 'main/css/base.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'challengeapp/css/list.css' %}" />
+{% endblock css %}
+
+
+{% block content %}
+<section class="page-section" id="allchallenge">
+    <div class="container text-center">
+        <h2 class="page-section-heading "></h2>
+
+        <img height=100 src="{% static 'main/assets/img/지구지글_로고.png' %}">
+        <div class="container">
+            <div class="container">
+                <!-- 검색 -->
+                <form class="form-inline my-2 my-md-0" method="get" action="{% url 'search' %}">
+                    <input class="form-control" type="text" placeholder="Submit Search on Enter key" aria-label="Search"
+                        name="b" value="{{b}}">
+                </form>
+                <input type="button" value="search" onclick="location.href='{% url 'search' %}' " class="close-btn">
+                <input type="button" value="+" onclick="location.href='{% url 'addchallenge' %}'" class="plus-btn">
+                <hr>
+                <br>
+                <br>
+            </div>
+
+            <div class="section">
+
+                <ul class="list img-list">{% if search %}
+                    {% for post in search %}
+                    <li class=list-border>
+
+                        <a class="inner">
+                            <div class="li-img">
+                                {% if post.challenge_img %}
+                                <img src="{{ post.challenge_img.url }}" width="150" height="150" alt="profile_image">
+                                <br>
+                                {% endif %}
+                            </div>
+
+                            <div class="li-text">
+                                <h4 class="li-head"> {{ post.challenge_name }}</h4>
+                                <button type="button" class="btn-challenge li-btn" style="float: right;"
+                                    onclick="location.href='{% url 'more' %}?id={{post.id}}'">더보기 및 참여하기</button>
+                                <div class="li-sub">
+                                    <!-- 소개는 잘라서 more 페이지에서 더 볼 수 있도록, 후에 합치며 수정할 수 있음 = 중복 페이지 발견,,!  / 마지막 숫자 7은 보여지는 글자 수 -->
+                                    <p> {{ post.introduction|safe|slice:":50" }} ...</p>
+                                </div>
+
+                            </div>
+                        </a>
+                    </li>{% endfor %}
+                </ul>
+            </div>
+
+            <div class="li-text">
+                {% else %}
+                <h4 class="li-head">일치하는 검색결과가 없어요..ㅠㅠ <br>다시 검색해주세요. </h4>
+            </div>
+
+
+            {% endif %}
+
+
+
+        </div>
+</section>
+
+{% endblock %}

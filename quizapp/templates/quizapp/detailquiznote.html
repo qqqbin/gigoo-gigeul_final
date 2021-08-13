@@ -1,0 +1,222 @@
+{% extends 'main/base.html' %} 
+{% load static %} 
+
+{% block css %} 
+<link rel="stylesheet" type="text/css" href="{% static 'main/css/base.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'main/css/main.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'quizapp/css/quizdetail.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'challengeapp/css/common.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'quizapp/css/quiznote.css' %}"/>
+{% endblock css %} 
+
+{% block content %} 
+
+<section class="page-section container font-green text-center font" id="challenge">
+    <div class>
+        <article class>
+            <div class="container">
+                <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0"></h2>
+            </div>
+        </article>
+
+        <article class="act-content-article container">
+            <div class="my-content">
+                <div class="act-title">
+                  <div class="act-img-b">
+                    <!-- 챌린지 대표사진 보이기 -->
+                    {{ activity.activity_img }}
+                    <img class="act-img" src="{% static 'challengeapp/img/quiz_logo.png' %}" alt="?">
+                    <!-- 챌린지 설명 보이기-->
+                    <div class="act-exp" style="font-family: 'yg-jalnan';">
+                      <h4>환경 퀴즈 노트</h4>
+                    </div>
+                    
+
+                  </div>
+                  
+                </div>
+                <div class="">
+                  <a class="de-title-btn" href="{% url 'quiz' %}">퀴즈 풀러가기</a>
+                </div>
+                <hr class="act-hr">
+            </div>
+    </article>
+
+        <!-- 챌린지 활동 자세하게 보기 -->
+        <article class="my-content-article">
+          <div class="container my-content clearfix">
+            <div class="act-content-b">
+              <div class="section container px-4 px-lg-5">
+                <input type="radio" name="slide" id="slide01" checked>
+                <input type="radio" name="slide" id="slide02">
+                <input type="radio" name="slide" id="slide03">
+                <input type="radio" name="slide" id="slide04">
+                <input type="radio" name="slide" id="slide05">
+                <input type="radio" name="slide" id="slide06">
+                <input type="radio" name="slide" id="slide07">
+                <input type="radio" name="slide" id="slide08">
+                <input type="radio" name="slide" id="slide09">
+                <div class="slide-wrap">
+                  <ul class="slidelist">
+
+                    <li>
+                      <a>
+                        <label for="slide08" class="left"><img src="{% static 'challengeapp/img/act-l.png' %}"></label>
+                
+                        <img src="{% static 'challengeapp/img/quiz1.png' %}" style="  width: 695px;height: 450px;">
+                        <label for="slide02" class="right"><img src="{% static 'challengeapp/img/act-r.png' %}"></label>
+                        
+                        <div class="textbox">
+                            <h4><br><br>Q.<br>
+                                달걀 껍질은 일반쓰레기임으로<br>
+                                일반 종량제 봉투에 담아 버려야 한다.</h4>
+                            <p>달걀 껍질이나 일반적으로 조류의 알들은 
+                                알의 껍질에 석회질이 많기 때문에 <br>
+                                일반 쓰레기로 분류해서버리야 해요!<br>
+                                수거된 음식물 쓰레기는 주로 가축의 사료나 퇴비로 <br>
+                                재활용되기 때문에 석회질이 많은 달걀 껍질은 <br>
+                                음식물 쓰레기로 버리면 안돼요!<br>
+                                달걀껍질은 일반쓰레기로 분류해서 버려야 합니다!</p>
+                          </div>
+                      </a>
+                    </li>
+
+                    <li>
+                      <a>
+                        <label for="slide01" class="left"><img src="{% static 'challengeapp/img/act-l.png' %}"></label>
+                        <img src="{% static 'challengeapp/img/quiz2.png' %}" style="  width: 695px;height: 450px;">
+                        <div class="textbox">
+                            <h4><br><br>Q. <br>플라스틱 용기에 조금이라도 비닐이 붙어있으면
+                                재활용이 어렵다.</h4>
+                            <p>비닐이 접착제로 붙어 있으면 재활용이 어려워요!<br> 플라스틱을 온전히 재활용하려면 재질이 같아야 한답니다.<br> 
+                                비닐과 플라스틱의 소재가 다른 경우가 많아서 <br>비닐이 완벽하게 제거되지 않으면 사실상 재활용은 어려워요!<br>
+                                재활용하려면 배출할 때 상표가 적혀 있는 비닐을 떼내야 해요!</p>
+                          </div>
+                        <label for="slide03" class="right"><img src="{% static 'challengeapp/img/act-r.png' %}"></label>
+                      </a>
+                    </li>
+
+                    <li>
+                      <a>
+                        <label for="slide02" class="left"><img src="{% static 'challengeapp/img/act-l.png' %}"></label>
+                        <img src="{% static 'challengeapp/img/quiz3.png' %}" style="  width: 695px;height: 450px;">
+                        <div class="textbox">
+                            <h4><br><br>Q. <br>
+                                화분은 일반쓰레기다.</h4>
+                            <p>분갈이가 어려운 식물은 화분에서 분리해서, <br>일반쓰레기 종량제봉투에 넣어서 버려주어야 해요. <br>
+                                사기나 도자기로 된 화분은 타지않는 쓰레기로, <br>흙과 함께 매립이 되는 불연성 마대자루에 배출해주어야 해요!<br> 
+                                유리로 된 화분도 또한 재활용이 불가능 하기 때문에 <br>불연성마대로 배출해야 합니다!</p>
+                          </div>
+                        <label for="slide04" class="right"><img src="{% static 'challengeapp/img/act-r.png' %}"></label>
+                      </a>
+                    </li>
+
+                    <li>
+                      <a>
+                        <label for="slide03" class="left"><img src="{% static 'challengeapp/img/act-l.png' %}"></label>
+                        <img src="{% static 'challengeapp/img/quiz4.png' %}" style="  width: 695px;height: 450px;">
+                        <div class="textbox">
+                            <h4><br><br>Q. <br>
+                              고추장, 간장, 쌈장 등 장류는<br>
+                              음식물 쓰레기다.</h4>
+                            <p>염분이 많은 장류는 음식쓰레기에 포함되지 않으므로 <br>일반쓰레기에 버려야 해요!</p>
+                          </div>
+                        <label for="slide05" class="right"><img src="{% static 'challengeapp/img/act-r.png' %}"></label>
+                      </a>
+                    </li>
+
+                    <li>
+                      <a>
+                        <label for="slide04" class="left"><img src="{% static 'challengeapp/img/act-l.png' %}"></label>
+                        <img src="{% static 'challengeapp/img/quiz5.png' %}" style="  width: 695px;height: 450px;">
+                        <div class="textbox">
+                            <h4><br><br>Q. <br>
+                              패스트푸드 음료컵의 뚜껑과 빨대는<br>
+                              모두 플라스틱에 포함되지 않아요!</h4>
+                            <p>뚜껑은 플라스틱, 빨대는 일반쓰레기로 <br>
+                              각각 분리배출해야 해요!</p>
+                          </div>
+                        <label for="slide06" class="right"><img src="{% static 'challengeapp/img/act-r.png' %}"></label>
+                      </a>
+                    </li>
+
+                    <li>
+                      <a>
+                        <label for="slide05" class="left"><img src="{% static 'challengeapp/img/act-l.png' %}"></label>
+                        <img src="{% static 'challengeapp/img/quiz6.png' %}" style="  width: 695px;height: 450px;">
+                        <div class="textbox">
+                            <h4><br><br>Q. <br>
+                              칫솔은 플라스틱 재활용 쓰레기이다.</h4>
+                            <p>칫솔은 플라스틱류가 아닌 일반쓰레기로 <br> 분류해서 버려야 해요!</p>
+                          </div>
+                        <label for="slide07" class="right"><img src="{% static 'challengeapp/img/act-r.png' %}"></label>
+                      </a>
+                    </li>
+
+                    <li>
+                      <a>
+                        <label for="slide06" class="left"><img src="{% static 'challengeapp/img/act-l.png' %}"></label>
+                        <img src="{% static 'challengeapp/img/quiz7.png' %}" style="  width: 695px;height: 450px;">
+                        <div class="textbox">
+                            <h4><br><br>Q. <br>
+                                깨진 유리병은 유리병 재활용이다.</h4>
+                            <p>깨진 유리병은 유리병 재활용이 아니라<br>
+                              신문지등에 싸서 일반쓰레기로
+                              버려야 해요!</p>
+                          </div>
+                        <label for="slide08" class="right"><img src="{% static 'challengeapp/img/act-r.png' %}"></label>
+                      </a>
+                    </li>
+
+                    <li>
+                      <a>
+                        <label for="slide07" class="left"><img src="{% static 'challengeapp/img/act-l.png' %}"></label>
+                        <img src="{% static 'challengeapp/img/quiz8.png' %}" style="  width: 695px;height: 450px;">
+                        <div class="textbox">
+                            <h4><br><br>Q. <br>
+                              도자기, 사기는
+                              재활용 쓰레기다.</h4>
+                            <p>유리그릇은 재활용이 되지만 <br>도자기와 사기는 일반쓰레기입니다!</p>
+                          </div>
+                        <label for="slide01" class="right"><img src="{% static 'challengeapp/img/act-r.png' %}"></label>
+                      </a>
+                    </li>
+
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+        </article>
+        <br><br>
+
+
+        <!-- mypage, badge, activity가 사용하는 aside -->
+        <article class="aside-article">
+          <div class="my-aside">
+              <div class="my">
+                  <!-- 설정한 프로필 사진 보이기 -->
+                  <img class="aside-profile" src="{% static 'challengeapp/img/profile.png' %}" alt="{{user.nickname}}">
+                  <p class="my-aside-p">{{ user.nickname }}user.nickname</p>
+              </div>
+              <hr class="my-aside-hr">
+              <div class="my-aside-b">
+                  <!-- <button type="button" class="my-aside-btn">Profile</button>
+                  <button type="button" class="my-aside-btn">Quiz note</button>
+                  <button type="button" class="my-aside-btn">Badge</button>
+                  <button type="button" class="my-aside-btn">Activity</button> -->
+                  <p class="my-aside-btn"><a class="my-a" href="{% url 'editinfo' %}">Profile</a></p>
+                  <p class="my-aside-btn"><a class="my-a" href="{% url 'quiznote' %}">Quiznote</a></p>
+                  <p class="my-aside-btn"><a class="my-a" href="{% url 'badge' %}">Badge</a></p>
+                  <p class="my-aside-btn"><a class="my-a" href="{% url 'activity' %}">Activity</a></p>
+
+              </div>
+          </div>
+      </article>
+      
+    </div>
+</section> 
+
+
+{% endblock %}

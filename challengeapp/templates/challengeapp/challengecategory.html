@@ -1,0 +1,35 @@
+{% extends 'main/base.html' %}
+{% load static %} 
+
+{% block css %} 
+<link rel="stylesheet" type="text/css" href="{% static 'main/css/base.css' %}" />
+{% endblock css %} 
+
+{% block content %}
+
+<section class="page-section container font-green text-center font" id="challenge">
+    <div class>
+        <article class>
+            <div class="container">
+                <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0"></h2>
+            </div>
+        </article>
+        <article>
+            <h1>카테고리 만들기</h1>
+
+            {{ error_message }}
+            <form method="POST">
+                {% csrf_token %} 
+                <table>
+                    {{ form.as_table }}
+                </table>
+
+                <button class="btn btn primary btn-xl" type="submit">추가하기</button>
+            </form>
+        </article>
+
+
+
+
+
+{% endblock %}

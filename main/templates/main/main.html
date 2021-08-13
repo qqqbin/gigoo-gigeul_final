@@ -1,0 +1,203 @@
+<!-- 항상 맨 첫 줄에 상속 -->
+{% extends 'main/base.html' %}
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" type="text/css" href="{% static 'main/css/main.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'main/css/base.css' %}" />
+{% endblock css %}
+
+{% block content %}
+<!-- main에서는 javascript도 사용 -> 고정 퀴즈 정답 보여줄 때 -->
+<link rel="stylesheet" href="{% static 'main/css/main.css' %}">
+<script type="text/javascript" src="{% static 'main/js/main.js' %}"></script>
+
+
+<!-- 메인 헤드 -->
+<header class="masthead bg-main text-white text-start">
+    <div class="container flex-column float:left;">
+        <img class=img-fluid style="width: 500px;" src="{% static 'main/assets/img/메인 소개.png' %}">
+        <br><br>
+        <h6>환경챌린지, 아직 혼자 실행하고 혼자 기록하시나요?</h6>
+        <h6>지금바로 '지구지글'에서 모두와 함께 환경 챌린지를 도전하고 실행해보세요.</h6>
+        <br><br><br>
+        
+        <img style="width: 100px; float: left; vertical-align:middle; padding-right: 5px;" src="{% static 'main/assets/img/인원수.png' %}">
+        <p style="float: left;" class="userintro"><b>&nbsp;지금까지&nbsp;&nbsp;</b></p>
+        <div style="width: 100px; height: 25px; float: left;" class="usercount">{{ user_count }} 👤 &nbsp;</div><p style="float: left;" class="userintro"><b>&nbsp;분과</b></p>
+        <br><br>
+        <p style="float: left;"class="userintro"><b>&nbsp;함께&nbsp;&nbsp;</b></p><div style="width: 120px; height: 25px; float: left;" class="usercount">{{ challenge_count }} ✍&nbsp;</div><p style="float: left;" class="userintro">
+            <b>&nbsp;개의 챌린지를 하였습니다.</b></p>
+        <br><br>
+    </div>
+    <div class="container">
+        <a class="btn btn-xl btn-outline-main" href="{% url 'allchallengeandsearch' %}">
+            챌린지 시작해보기
+        </a>
+    </div>
+</header>
+<!-- 지구지글 간단 소개 Section-->
+<section class="page-section" id="introduce">
+    <div class="container font-green text-center">
+        <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0"></h2>
+        <img height=170 src="{% static 'main/assets/img/지구지글_로고.png' %}">
+        <br>
+        <h6 style="display: inline-block;">저희</h6>
+        <h5 style="display: inline-block;">'지구지글'</h6>
+            <h6 style="display: inline-block;">은</h6>
+            <h6>지구가 뜨겁게 불타고 있다는 의미에서 따온 명칭입니다!</h6>
+            <h6>여러분은 하루에 얼마나 많은 환경보호를 실천하고 있나요?</h6>
+            <br>
+            <img src="{% static 'main/assets/img/점.png' %}">
+            <br><br>
+            <img src="{% static 'main/assets/img/점.png' %}">
+            <br><br>
+            <img src="{% static 'main/assets/img/점.png' %}">
+            <br><br>
+            <h4>현재 심각한 전 세계의 환경 문제 !</h4>
+            <br>
+            <img class=img-fluid src="{% static 'main/assets/img/쓰레기자료.png' %}">
+            <br><br><br><br>
+            <h4>저희 서비스는</h4>
+            <h4>여러분들의 다양한 환경보호 활동을 지원합니다 !</h4>
+            <br>
+            <img class=img-fluid src="{% static 'main/assets/img/제공서비스.png' %}">
+    </div>
+</section>
+<!-- 챌린지 소개 Section-->
+<section class="page-section" id="challenge">
+    <div class="container font-green text-center align-items-center">
+        <h1>#다양한 챌린지</h1>
+        <h6>다양한 챌린지를 통해</h6>
+        <h6>환경 활동 기록도 하고, 포인트도 얻자 !</h6>
+        <br>
+        <section>
+            <div class="rt-container">
+                  <div class="col-rt-12">
+                      <div class='demo-container'>
+                          <div class='carousel'>
+                            <input checked='checked' class='carousel__activator' id='carousel-slide-activator-1' name='carousel' type='radio'>
+                            <input class='carousel__activator' id='carousel-slide-activator-2' name='carousel' type='radio'>
+                            <input class='carousel__activator' id='carousel-slide-activator-3' name='carousel' type='radio'>
+                            <div class='carousel__controls'>
+                              <label class='carousel__control carousel__control--forward' for='carousel-slide-activator-2'>
+                                👉
+                              </label>
+                            </div>
+                            <div class='carousel__controls'>
+                              <label class='carousel__control carousel__control--backward' for='carousel-slide-activator-1'>
+                                👈
+                              </label>
+                            </div>
+                            <div class='carousel__screen'>
+                              <div class='carousel__track'>
+                                <div class='carousel__item carousel__item--mobile-in-1 carousel__item--tablet-in-2 carousel__item--desktop-in-3'>
+                                    <img style="width: 300px;" src="{% static 'main/assets/challenge/따릉이챌린지.png' %}">
+                                </div>
+                                <div class='carousel__item carousel__item--mobile-in-1 carousel__item--tablet-in-2 carousel__item--desktop-in-3'>
+                                  <div class='demo-content'>
+                                    <img style="width: 300px;" src="{% static 'main/assets/challenge/아나바다챌린지.png' %}">
+                                  </div>
+                                </div>
+                                <div class='carousel__item carousel__item--mobile-in-1 carousel__item--tablet-in-2 carousel__item--desktop-in-3'>
+                                  <div class='demo-content'>
+                                    <img style="width: 300px;" src="{% static 'main/assets/challenge/용기내챌린지.png' %}">
+                                  </div>
+                                </div>
+                                <div class='carousel__item carousel__item--mobile-in-1 carousel__item--tablet-in-2 carousel__item--desktop-in-3'>
+                                  <div class='demo-content'>
+                                    <img style="width: 300px;" src="{% static 'main/assets/challenge/이면지챌린지.png' %}">
+                                  </div>
+                                </div>
+                                <div class='carousel__item carousel__item--mobile-in-1 carousel__item--tablet-in-2 carousel__item--desktop-in-3'>
+                                  <div class='demo-content'>
+                                    <img style="width: 300px;" src="{% static 'main/assets/challenge/텀블러챌린지.png' %}">
+                                  </div>
+                                </div>
+                                <div class='carousel__item carousel__item--mobile-in-1 carousel__item--tablet-in-2 carousel__item--desktop-in-3'>
+                                  <div class='demo-content'>
+                                    <img style="width: 300px;" src="{% static 'main/assets/challenge/환경표지챌린지.png' %}">
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                </div>
+            </div>
+        </section>
+        <br>
+        <a class="btn btn-xl btn-outline-light" href="{% url 'allchallengeandsearch' %}">
+            챌린지 시작해보기
+        </a>
+
+    </div>
+    
+</section>
+<!-- 랭킹 소개 Section-->
+<section class="page-section bg-challenge text-white mb-0" id="ranking">
+    <div class="container font-green text-center">
+        <h1>#환경 포트폴리오 제공</h1>
+        <h6>다양한 환경 챌린지를 실행하고</h6>
+        <h6>나만의 포트폴리오를 만들어보세요 !</h6>
+        <br>
+        <img style=padding:10px; height=320 src="{% static 'main/assets/랭킹/닉네임a.png' %}">
+        
+        <img style=padding:10px; height=320 src="{% static 'main/assets/랭킹/닉네임b.png' %}">
+        
+        <img style=padding:10px; height=320 src="{% static 'main/assets/랭킹/닉네임c.png' %}">
+        <br><br><br>
+        <a class="btn btn-xl btn-outline-light" href="{% url 'mypage' %}">
+            활동 추가하기
+        </a>
+    </div>
+</section>
+
+<!-- 퀴즈 소개 Section-->
+<section class="page-section" id="quiz">
+    <div class="container font-green text-center align-items-center">
+        <h1>#환경 퀴즈 제공</h1>
+        <h6>알쏭달쏭 헷갈리는 환경 퀴즈?</h6>
+        <h6>본인의 지식를 확인해보며 포인트도 얻자 !</h6>
+<div class="quiz">
+    <img style="width: 700px;" src="{% static 'main/assets/img/mainquiz1.png' %}">
+    <a href="javascript:doDisplay1();"><img style="width: 60px;" src="{% static 'main/assets/img/quizyes.png' %}"></a>
+    <a href="javascript:doDisplay1();"><img style="width: 60px;" src="{% static 'main/assets/img/quizno.png' %}"></a>
+    <div id="myDIV1">
+        <h5><br>정답은 O! <br> 부피가 클 경우 대형 폐기물 신고 후 <br>배출 수수료를 납부하고 배출해야 한다.</h5>
+    </div> <br>
+
+    <img style="width: 700px;" src="{% static 'main/assets/img/mainquiz2.png' %}">
+    <a href="javascript:doDisplay2();"><img style="width: 60px;" src="{% static 'main/assets/img/quizyes.png' %}"></a>
+    <a href="javascript:doDisplay2();"><img style="width: 60px;" src="{% static 'main/assets/img/quizno.png' %}"></a>
+    <div id="myDIV2">
+        <h5><br>정답은 X! <br>칫솔은 플라스틱류가 아닌<br>일반 쓰레기로 분류해야 한다.</h5>
+    </div> <br>
+
+    <img style="width: 700px;" src="{% static 'main/assets/img/mainquiz3.png' %}">
+    <a href="javascript:doDisplay3();"><img style="width: 60px;" src="{% static 'main/assets/img/quizyes.png' %}"></a>
+    <a href="javascript:doDisplay3();"><img style="width: 60px;" src="{% static 'main/assets/img/quizno.png' %}"></a>
+    <div id="myDIV3">
+        <h5><br>정답은 X! <br>염분이 많은 장류는 음식물 쓰레기에 포함되지 않는다.</h5>
+    </div> <br>
+
+    <img style="width: 700px;" src="{% static 'main/assets/img/mainquiz4.png' %}">
+    <a href="javascript:doDisplay4();"><img style="width: 60px;" src="{% static 'main/assets/img/quizyes.png' %}"></a>
+    <a href="javascript:doDisplay4();"><img style="width: 60px;" src="{% static 'main/assets/img/quizno.png' %}"></a>
+    <div id="myDIV4">
+        <h5><br>정답은 X! <br>뚜껑과 플라스틱 빨대는<br>일반 쓰레기로 분리배출해야 한다.</h5>
+    </div> <br>
+    
+</div>
+        <br><br>
+
+        <a class="btn btn-xl btn-outline-light" href="{% url 'quiz' %}">
+            다른 퀴즈 확인해보기
+        </a>
+        <br>
+        <br>
+        <h6>위 퀴즈 외의 다양한 퀴즈들을 확인해보세요!</h6>
+        <h6>퀴즈 출처 : https://news.seoul.go.kr/env/archives/509845</h6>
+    </div>
+</section>
+{% endblock %}

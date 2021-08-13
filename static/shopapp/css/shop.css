@@ -1,0 +1,65 @@
+
+	.section input[id*="slide"] {display:none;}
+	.section .slidewrap {max-width:1400px;margin:0 auto;}
+	.section .slidelist {white-space:nowrap;font-size:0;overflow:hidden;position:relative;}
+	.section .slidelist > li {display:inline-block;vertical-align:middle;width:100%;transition:all .5s;}
+	.section .slidelist > li > a {display:block;position:relative;}
+	.section .slidelist > li > a img {width:100%;}
+	.section .slidelist label {position:absolute;z-index:10;top:50%;transform:translateY(-50%);cursor:pointer;}
+	/* input에 체크되면 슬라이드 효과 */
+	.section input[id="slide01"]:checked ~ .slidewrap .slidelist > li {transform:translateX(0%);}
+	.section input[id="slide02"]:checked ~ .slidewrap .slidelist > li {transform:translateX(-100%);}
+	.section input[id="slide03"]:checked ~ .slidewrap .slidelist > li {transform:translateX(-200%);}
+
+	/* 좌,우 슬라이드 버튼 */
+	.slide-control > div {display:none;}
+	.section .left {left:30px;}
+	.section .right {right:30px;}
+	.section input[id="slide01"]:checked ~ .slidewrap .slide-control > div:nth-child(1) {display:block;}
+	.section input[id="slide02"]:checked ~ .slidewrap .slide-control > div:nth-child(2) {display:block;}
+	.section input[id="slide03"]:checked ~ .slidewrap .slide-control > div:nth-child(3) {display:block;}
+
+	/* 페이징 */
+	.slide-pagelist {text-align:center;padding:20px;}
+	.slide-pagelist > li {display:inline-block;vertical-align:middle;}
+	.slide-pagelist > li > label {display:block;padding:8px 30px;border-radius:30px;background:#D0E4D1;margin:20px 10px;cursor:pointer;}
+	.section input[id="slide01"]:checked ~ .slidewrap .slide-pagelist > li:nth-child(1) > label {background:#8ABC8D;}
+	.section input[id="slide02"]:checked ~ .slidewrap .slide-pagelist > li:nth-child(2) > label {background:#8ABC8D;}
+	.section input[id="slide03"]:checked ~ .slidewrap .slide-pagelist > li:nth-child(3) > label {background:#8ABC8D;}
+
+  /*탭 메뉴*/
+  .tab_content {text-align:right;font-size:20; font-family: 'yg-jalnan';}
+input[type="radio"] {display:none;} /* input을 안보이게 처리 */
+input[type="radio"] + label {display:inline-block;padding:20px;background:#f5f5f500;color:#999;font-size:14px;cursor:pointer;} /* 버튼 공통 속성 */
+input[type="radio"]:checked + label {background:rgba(255, 255, 255, 0);color:#000;} /* 선택된 버튼속성 */
+
+.conbox {height:270px;background:rgba(153, 153, 153, 0);margin:0 20px;display:none;text-align:center;font-size:12px;padding:20px;box-sizing:border-box; } /* 컨텐츠박스 공통 속성 */
+input[id="tab01"]:checked ~ .con1 {display:block;} /* 인풋에 체크가 해당 요소보이게 설정 */
+input[id="tab02"]:checked ~ .con2 {display:block;}
+input[id="tab03"]:checked ~ .con3 {display:block;}
+
+.product-name{
+  font-size: 15px;
+  font-family: 'NanumSquareRound';
+}
+
+.product-price{
+  font-size: 20px;
+  font-family: 'yg-jalnan';
+}
+
+.cell {
+  text-align: center;
+  display: inline-block;
+  margin: 20px;
+  list-style-type : none
+}
+
+.challengefont1{
+  font-family: 'yg-jalnan';
+  font-size: 50;
+}
+ .warnning{
+   color: rgb(177, 85, 85);
+ }
+

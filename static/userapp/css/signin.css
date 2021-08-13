@@ -1,0 +1,71 @@
+*{
+    font-family: 'NanumSquareRound';
+    text-align: center;
+}
+
+.all_box{
+    padding: 10% 30%;
+}
+
+.signin{
+    font-family:  'yg-jalnan';
+    color: #8abc8d;
+}
+
+hr{
+    margin: 5%;
+    color: #1d5b22;
+}
+
+a:link {text-decoration: none;}
+a:visited {text-decoration: none;}
+a:hover {text-decoration: underline;}
+
+.social-img2 {
+    width: 315px;
+    height: 55px;
+    background-color: white;
+    border-color: unset;
+}
+
+.login_form{
+    margin: 8%;
+}
+
+.id_pw{
+    width: 300px;
+    height: 50px;
+    border: solid 1px #8abc8d;
+    border-radius: 4px;
+    font-size: 18px;
+}
+input:focus[class="id_pw"]{
+    outline: none;
+}
+
+.in-in {
+    width: 300px;
+    height: 50px;
+    border-radius: 4px;
+    background-color: #8abc8d;
+    font-size: 20px;
+    color: white;
+    border-style: none;
+}
+.in-in:hover{
+    background-color: #648f67;
+}
+
+.intro{
+    color: #616161;
+    font-size: 20px;
+}
+
+.signup{
+    color: #8abc8d;
+    font-size: 20px;
+}
+
+.go_signup{
+    margin-top: 5%;
+}

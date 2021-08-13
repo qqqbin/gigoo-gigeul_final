@@ -1,0 +1,115 @@
+*{
+    text-align: center;
+}
+
+body {
+    font-family: 'NanumSquareRound' !important;
+    color: #8abc8d;
+}
+
+.all_box{
+    padding: 10% 23%;
+}
+
+.edit_box{
+    padding: 10% 10%;
+    background-color: #f4fbf4;
+}
+
+hr{
+    margin: 10%;
+    color: #8abc8d;
+}
+
+a:link {text-decoration: none;}
+a:visited {text-decoration: none;}
+a:hover {text-decoration: none; color:#1d5b22;}
+
+#MY_PROFILE_b {
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+}
+
+/* 프로필 사진 편집 및 비밀번호 수정 연결 링크 */
+.info-input{
+    font-size: 17px;
+    color: #8abc8d;
+}
+
+table {
+    margin-left: auto;
+    margin-right: auto;
+}
+td{
+    color:#8abc8d;
+    padding: 3%;
+    width: 100px;
+    font-size: 18px;
+}
+
+input{
+    width: 230px;
+    height: 40px;
+    border: none;
+    border-radius: 4px;
+    color: #8abc8d;;
+    text-align: center;
+    font-size: 18px;
+}
+input:focus{
+    outline: none;
+}
+
+.submit{
+    width: 150px;
+    height: 40px;
+    font-size: 17px;
+    margin-top: 3%;
+    border-radius: 33px;
+    border: solid 1px #8abc8d;
+    background-color: rgba(138, 188, 141, 0.07);
+    color: #8abc8d;
+}
+.submit:hover{
+    background-color: rgba(162, 211, 165, 0.548);
+    color: white;
+}
+
+
+
+/* 파일선택 css */
+.filebox label {
+    display: inline-block;
+    padding: .5em .75em;
+    color: #fff;
+    font-size: inherit;
+    line-height: normal;
+    vertical-align: middle;
+    background-color: #8abc8d;
+    cursor: pointer;
+    border: 1px solid #8abc8d;
+    width: 100px;
+    border-radius: 33px;
+    -webkit-transition: background-color 0.2s;
+    transition: background-color 0.2s;
+}
+  
+.filebox label:hover {
+    background-color: #8dc991;
+}
+  
+.filebox label:active {
+    background-color: #8dc991;
+}
+
+.filebox input[type="file"] {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}

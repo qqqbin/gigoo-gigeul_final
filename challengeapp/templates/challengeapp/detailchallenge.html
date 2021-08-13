@@ -1,0 +1,39 @@
+{% extends 'main/base.html' %}
+{% load static %} 
+
+{% block css %} 
+<link rel="stylesheet" type="text/css" href="{% static 'main/css/base.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'challengeapp/css/detailch.css' %}" />
+<!-- <link rel="stylesheet" type="text/css" href="{% static 'challengeapp/css/mypage.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'challengeapp/css/common.css' %}"/> -->
+{% endblock css %} 
+
+{% block content %}
+
+<style>
+    * {
+        font-family: 'NanumSquareRound' !important;
+    }
+
+    .container {
+        width: 100%
+    }
+</style>
+
+
+
+<p>{{ challenge.challenge_name }}</p>
+<p>챌린지 설명</p>
+<p> {{ challenge.introduction }}</p>
+
+{% for category in challenge.categorys.all %} 
+    <span> {{ category.name }} </span>
+{% endfor %}
+
+<a href="{% url 'postedit' post.id %}"> 수정하기 </a>
+
+<a href ="{% url 'writepost' %}">새로운 활동 작성하기</a>
+
+<a href="{% url 'activity' %}"> 돌아가기 </a>
+
+{% endblock %}

@@ -1,0 +1,90 @@
+table {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.font {
+    font-family: 'yg-jalnan';
+}
+
+/* a태그 밑줄 없애기 */
+a:link {text-decoration: none;}
+a:visited {text-decoration: none;}
+a:hover {text-decoration: underline;}
+/* a태그 밑줄 없애기 종료 */
+
+.up-btn1 { 
+    width: 148px;
+    height: 30px;
+    /* padding: 14px 34px; */
+    border-radius: 4px;
+    background-color: #8abc8d;
+    color: white;
+    border-style: none;
+    float: left;
+}
+
+.up-btn {
+width: 97px;
+height: 30px;
+/* padding: 20px 8px 19px 9px; */
+border-radius: 4px;
+border: solid 2px #8abc8d;
+background-color: white;
+float: left;
+}
+
+.up-up {
+width: 240px;
+height: 61px;
+margin: 25px;
+padding: 16px 60px 15px;
+border-radius: 4px;
+background-color: #8abc8d;
+color: white;
+border-style: none;
+}
+
+.up-l {
+width: 300px;
+height: 47px;
+/* margin: 9.5px 53px 82px 692px; */
+padding: 11px 75px 11px 76px;
+border: solid 1px #8abc8d;
+background-color: rgba(112, 112, 112, 0.04);
+color: #8abc8d;
+
+}
+
+.up-id, .up-pw, .up-pw2, .up-em, .up-ch, .up-nick{
+    width: 328px;
+    height: 59px;
+}
+
+.up-btn, .up-btn1{
+    width: 97px;
+    height: 59px;
+}
+
+.up-btn{
+    color: #8abc8d;
+}
+
+
+.agree {
+    width: 248px;
+    height: 20px;
+    margin: 16px 27px 30px 13px;
+    font-size: 20px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.25;
+    letter-spacing: normal;
+    text-align: center;
+    color: rgba(255, 0, 0, 0.6);
+}
+
+td{
+    color:#8abc8d;
+}

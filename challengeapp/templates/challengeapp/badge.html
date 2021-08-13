@@ -1,0 +1,76 @@
+{% extends 'main/base.html' %} 
+{% load static %} 
+
+{% block css %} 
+<link rel="stylesheet" type="text/css" href="{% static 'main/css/base.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'challengeapp/css/badge.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'challengeapp/css/common.css' %}"/>
+{% endblock css %} 
+
+{% block content %} 
+
+
+<section class="page-section container font-green text-center font" id="challenge">
+    <div class>
+        <article class>
+            <div class="container">
+                <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0"></h2>
+            </div>
+        </article>
+
+        <article class="my-content-article">
+            <div class="container">
+                <div class>
+                    <div class="bad-title">
+                        
+                    </div>
+
+                <div class="container my-content clearfix">
+                    <div class="bad-img">
+                        <img class="badge-img1" src="{% static 'challengeapp/img/badge.png' %}" alt="tree">
+                        <img class="badge-img2" src="{% static 'challengeapp/img/badge2.png' %}" alt="tree">
+                    </div>
+                    <!-- 뱃지 추가되는 곳 -->
+                    <div class="container bad-content-b">
+                        <div class="badgepart">
+                            <form method="post" >
+                                {% csrf_token %}
+                                <!-- 뱃지 보이기&툴팁 -->
+                                <div class="tooltip1"><img class="badge" src="{% static 'challengeapp/img/용기내.png' %}" alt="tree">
+                                    <span class="tooltiptext1">챌린지 이름</span>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </article>
+
+        <!-- mypage, badge, activity가 사용하는 aside -->
+        <article class="aside-article">
+          {% if user.is_authenticated %}
+
+          {% if user.profile_image %}
+          <div class="my-aside">
+              <div class="my">
+                <img src="{{ user.profile_image.url }}" width="150" height="150" alt="profile_image">
+                {% endif %}
+                <h3>{{ user.nickname }}</h3>
+                <h6>아이디 : {{ user.username }}</h6>
+                <h6>이메일 : {{ user.email }}</h6>
+                <h6>지구지글 시작일 : {{ user.date_joined }}</h6>
+                {% endif %}
+                <p class="my-aside-btn"><a class="my-a" href="{% url 'editinfo' %}">Profile</a></p>
+                <p class="my-aside-btn"><a class="my-a" href="{% url 'quiznote' %}">Quiznote</a></p>
+                <p class="my-aside-btn"><a class="my-a" href="{% url 'badge' %}">Badge</a></p>
+                <p class="my-aside-btn"><a class="my-a" href="{% url 'activity' %}">Activity</a></p>
+              </div>
+            </div>
+        </article>
+
+    </div>
+</section>
+
+
+{% endblock %}

@@ -1,0 +1,291 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" type="text/css" href="{% static 'main/css/base.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'shopapp/css/shop.css' %}" />
+{% endblock css %}
+
+{% block content %}
+<section class="page-section" id="banner, bestitem">
+    <div class="container font-green text-center">
+        <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0"></h2>
+        <div class="section">
+            <input type="radio" name="slide" id="slide01" checked>
+            <input type="radio" name="slide" id="slide02">
+            <input type="radio" name="slide" id="slide03">
+            <div class="slidewrap">
+                <ul class="slidelist">
+                    <!-- 슬라이드 영역 -->
+                    <li class="slideitem">
+                        <a href="#iconshop">
+                            <img src="{% static 'shopapp/img/iconshop.png' %}">
+                        </a>
+                    </li>
+                    <li class="slideitem">
+                        <a href="#fontshop">
+                            <img src="{% static 'shopapp/img/fontshop.png' %}">
+                        </a>
+                    </li>
+                    <li class="slideitem">
+                        <a href="#challengeshop">
+                            <img src="{% static 'shopapp/img/challengeshop.png' %}">
+                        </a>
+                    </li class="slideitem">
+
+                    <!-- 좌,우 슬라이드 버튼 -->
+                    <div class="slide-control">
+                        <div>
+                            <label for="slide03" class="left"><img height=50
+                                    src="{% static 'shopapp/img/left-arrow.png' %}"></label>
+                            <label for="slide02" class="right"><img height=50
+                                    src="{% static 'shopapp/img/right-arrow.png' %}"></label>
+                        </div>
+                        <div>
+                            <label for="slide01" class="left"><img height=50
+                                    src="{% static 'shopapp/img/left-arrow.png' %}"></label>
+                            <label for="slide03" class="right"><img height=50
+                                    src="{% static 'shopapp/img/right-arrow.png' %}"></label>
+                        </div>
+                        <div>
+                            <label for="slide02" class="left"><img height=50
+                                    src="{% static 'shopapp/img/left-arrow.png' %}"></label>
+                            <label for="slide01" class="right"><img height=50
+                                    src="{% static 'shopapp/img/right-arrow.png' %}"></label>
+                        </div>
+                    </div>
+
+                </ul>
+                <!-- 페이징 -->
+                <ul class="slide-pagelist">
+                    <li><label for="slide01"></label></li>
+                    <li><label for="slide02"></label></li>
+                    <li><label for="slide03"></label></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container font-weight-bold ">
+        <h4 style=display:inline class="text-start">베스트 아이템 <img src="{% static 'shopapp/img/line1.png' %}"
+                style="vertical-align:middle;"></h4>
+        <h6 style=display:inline class="text-start "> &ensp; 많은 사람들이 선택한 인기 아이템을 만나보세요!</h6>
+        <img src="{% static 'shopapp/img/line2.png' %}">
+        
+        <div class="tab_content text-center">
+            <!-- 버튼요소 -->
+            <input type="radio" name="tabmenu" id="tab01" checked>
+            <label for="tab01">아이콘</label>
+            <input type="radio" name="tabmenu" id="tab02">
+            <label for="tab02">폰트</label>
+            <input type="radio" name="tabmenu" id="tab03">
+            <label for="tab03">챌린지</label>
+            <!-- 컨텐츠 요소 -->
+            <div class="conbox con1">
+                <li class="cell">
+                    <div><img height=130 src="{% static 'shopapp/img/badge/지구뱃지.png' %}"></div>
+                    <div class="product-name">지구지킴이 뱃지</div>
+                    <div class="product-price">100</div>
+                </li>
+                <li class="cell">
+                    <div><img height=130 src="{% static 'shopapp/img/badge/왕관뱃지.png' %}"></div>
+                    <div class="product-name">나는야 환경왕 뱃지</div>
+                    <div class="product-price">200</div>
+                </li>
+                <li class="cell">
+                    <div><img height=130 src="{% static 'shopapp/img/badge/나뭇잎뱃지.png' %}"></div>
+                    <div class="product-name">그린그린 뱃지</div>
+                    <div class="product-price">100</div>
+                </li>
+                <li class="cell">
+                    <div><img height=130 src="{% static 'shopapp/img/badge/숲속뱃지.png' %}"></div>
+                    <div class="product-name">숲속요정 뱃지</div>
+                    <div class="product-price">150</div>
+                </li>
+                <li class="cell">
+                    <div><img height=130 src="{% static 'shopapp/img/badge/북극곰뱃지.png' %}"></div>
+                    <div class="product-name">북극곰 뱃지</div>
+                    <div class="product-price">100</div>
+                </li>
+                <li class="cell">
+                    <div><img height=130 src="{% static 'shopapp/img/badge/쓱싹뱃지.png' %}"></div>
+                    <div class="product-name">쓱싹쓱싹 뱃지</div>
+                    <div class="product-price">150</div>
+                </li>
+            </div>
+            <div class="conbox con2">
+                <li class="cell">
+                    <div><img height=130 src="{% static 'shopapp/img/txt/너만을비춤.png' %}"></div>
+                    <div class="product-name">너만을 비춤체</div>
+                    <div class="product-price">300</div>
+                </li>
+                <li class="cell">
+                    <div><img height=130 src="{% static 'shopapp/img/txt/함박눈.png' %}"></div>
+                    <div class="product-name">함박눈체</div>
+                    <div class="product-price">300</div>
+                </li>
+                <li class="cell">
+                    <div><img height=130 src="{% static 'shopapp/img/txt/메이플.png' %}"></div>
+                    <div class="product-name">메이플스토리체</div>
+                    <div class="product-price">300</div>
+                </li>
+                <li class="cell">
+                    <div><img height=130 src="{% static 'shopapp/img/txt/둥근모꼴.png' %}"></div>
+                    <div class="product-name">둥근모꼴체</div>
+                    <div class="product-price">300</div>
+                </li>
+                <li class="cell">
+                    <div><img height=130 src="{% static 'shopapp/img/txt/쿠키런.png' %}"></div>
+                    <div class="product-name">쿠키런체</div>
+                    <div class="product-price">300</div>
+                </li>
+            </div>
+
+            <div class="conbox con3">
+                <li class="cell">
+                    <div><img height=130 src="{% static 'shopapp/img/challenge/챌린지1.png' %}"></div>
+                    <div class="product-name">챌린지 1개 추가</div>
+                    <div class="product-price">300</div>
+                </li>
+                <li class="cell">
+                    <div><img height=130 src="{% static 'shopapp/img/challenge/챌린지3.png' %}"></div>
+                    <div class="product-name">챌린지 3개 추가</div>
+                    <div class="product-price">900</div>
+                </li>
+                <li class="cell">
+                    <div><img height=130 src="{% static 'shopapp/img/challenge/챌린지5.png' %}"></div>
+                    <div class="product-name">챌린지 5개 추가</div>
+                    <div class="product-price">1500</div>
+                </li>
+                <li class="cell">
+                    <div><img height=130 src="{% static 'shopapp/img/challenge/챌린지10.png' %}"></div>
+                    <div class="product-name">챌린지 10개 추가</div>
+                    <div class="product-price">3000</div>
+                </li>
+            </div>
+            
+        </div>
+    </div>
+</section>
+<body id="iconshop">
+<section class="page-section mb-0" id="iconshop">
+    <div class="container text-center">
+        <img width=1000 src="{% static 'shopapp/img/아이콘샵.png' %}">
+        <br><br><br>
+        <li class="cell">
+            <div><img height=130 src="{% static 'shopapp/img/badge/지구뱃지.png' %}"></div>
+            <div class="product-name">지구지킴이 뱃지</div>
+            <div class="product-price">100</div>
+            <div class="btn btn-outline-light " width=50  href="#!">구매</div>
+        </li>
+        <li class="cell">
+            <div><img height=130 src="{% static 'shopapp/img/badge/왕관뱃지.png' %}"></div>
+            <div class="product-name">나는야 환경왕 뱃지</div>
+            <div class="product-price">200</div>
+            <div class="btn btn-outline-light " width=50  href="#!">구매</div>
+        </li>
+        <li class="cell">
+            <div><img height=130 src="{% static 'shopapp/img/badge/나뭇잎뱃지.png' %}"></div>
+            <div class="product-name">그린그린 뱃지</div>
+            <div class="product-price">100</div>
+            <div class="btn btn-outline-light " width=50  href="#!">구매</div>
+        </li>
+        <br>
+        <li class="cell">
+            <div><img height=130 src="{% static 'shopapp/img/badge/숲속뱃지.png' %}"></div>
+            <div class="product-name">숲속요정 뱃지</div>
+            <div class="product-price">150</div>
+            <div class="btn btn-outline-light " width=50  href="#!">구매</div>
+        </li>
+        <li class="cell">
+            <div><img height=130 src="{% static 'shopapp/img/badge/북극곰뱃지.png' %}"></div>
+            <div class="product-name">북극곰 뱃지</div>
+            <div class="product-price">100</div>
+            <div class="btn btn-outline-light " width=50  href="#!">구매</div>
+        </li>
+        <li class="cell">
+            <div><img height=130 src="{% static 'shopapp/img/badge/쓱싹뱃지.png' %}"></div>
+            <div class="product-name">쓱싹쓱싹 뱃지</div>
+            <div class="product-price">150</div>
+            <div class="btn btn-outline-light " width=50  href="#!">구매</div>
+        </li>
+    </div>
+</section></body>
+<body id="fontshop">
+<section class="page-section mb-0" id="fontshop">
+    <div class="container text-center">
+        <img width=1000 src="{% static 'shopapp/img/폰트 샵.png' %}">
+        <br><br><br>
+        <li class="cell">
+            <div><img height=130 src="{% static 'shopapp/img/txt/너만을비춤.png' %}"></div>
+            <div class="product-name">너만을 비춤체</div>
+            <div class="product-price">300</div>
+            <div class="btn btn-outline-light " width=50  href="#!">구매</div>
+        </li>
+        <li class="cell">
+            <div><img height=130 src="{% static 'shopapp/img/txt/함박눈.png' %}"></div>
+            <div class="product-name">함박눈체</div>
+            <div class="product-price">300</div>
+            <div class="btn btn-outline-light " width=50  href="#!">구매</div>
+        </li>
+        <li class="cell">
+            <div><img height=130 src="{% static 'shopapp/img/txt/메이플.png' %}"></div>
+            <div class="product-name">메이플스토리체</div>
+            <div class="product-price">300</div>
+            <div class="btn btn-outline-light " width=50  href="#!">구매</div>
+        </li>
+        <br>
+        <li class="cell">
+            <div><img height=130 src="{% static 'shopapp/img/txt/둥근모꼴.png' %}"></div>
+            <div class="product-name">둥근모꼴체</div>
+            <div class="product-price">300</div>
+            <div class="btn btn-outline-light " width=50  href="#!">구매</div>
+        </li>
+        <li class="cell">
+            <div><img height=130 src="{% static 'shopapp/img/txt/쿠키런.png' %}"></div>
+            <div class="product-name">쿠키런체</div>
+            <div class="product-price">300</div>
+            <div class="btn btn-outline-light " width=50  href="#!">구매</div>
+        </li>
+    </div>
+</section></body>
+<body id="challengeshop">
+<section class="page-section bg-challenge" id="challengeshop">
+    <div class="container text-center ">
+        <h1 class="challengefont1">ADD<br>CHALLENGE</h1>
+        <h6>무분별한 챌린지 포인트 획득을 방지하기 위해 챌린지 획득에 제한을 두었습니다.<br>
+            주어진 챌린지를 모두 완료한 당신에게<br>
+            포인트를 이용해 챌린지를 추가할 수 있게 도와줍니다.<br>
+            챌린지를 구매하면 도전할 수 있는 챌린지의 개수가 늘어납니다.<br>
+            </h6>
+            <br>
+            <h6 class="warnning">※ 본인에게 알맞은 챌린지의 개수를 생각하고 구매해주세요. </h6>
+        <br>
+        <li class="cell">
+            <div><img height=130 src="{% static 'shopapp/img/challenge/챌린지1.png' %}"></div>
+            <div class="product-name">챌린지 1개 추가</div>
+            <div class="product-price">300</div>
+            <div class="btn btn-outline-light " width=50  href="#!">구매</div>
+        </li>
+        <li class="cell">
+            <div><img height=130 src="{% static 'shopapp/img/challenge/챌린지3.png' %}"></div>
+            <div class="product-name">챌린지 3개 추가</div>
+            <div class="product-price">900</div>
+            <div class="btn btn-outline-light " width=50  href="#!">구매</div>
+        </li>
+        <li class="cell">
+            <div><img height=130 src="{% static 'shopapp/img/challenge/챌린지5.png' %}"></div>
+            <div class="product-name">챌린지 5개 추가</div>
+            <div class="product-price">1500</div>
+            <div class="btn btn-outline-light " width=50  href="#!">구매</div>
+        </li>
+        <li class="cell">
+            <div><img height=130 src="{% static 'shopapp/img/challenge/챌린지10.png' %}"></div>
+            <div class="product-name">챌린지 10개 추가</div>
+            <div class="product-price">3000</div>
+            <div class="btn btn-outline-light " width=50  href="#!">구매</div>
+        </li>
+    </div>
+    
+    
+</section></body>
+{% endblock %}

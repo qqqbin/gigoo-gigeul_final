@@ -1,0 +1,59 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" type="text/css" href="{% static 'main/css/base.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'userapp/css/jw_editinfo.css' %}" />
+{% endblock css %}
+
+{% block content %}
+
+<div class="all_box">
+    <div class="edit_box">
+        <form action="" method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+
+            <br> <br>
+            {% if user.is_authenticated %}
+            {% if user.profile_image %}
+            <img src="{{ user.profile_image.url }}" width="250" height="250" alt="profile_image" id="MY_PROFILE_b">
+            {% else %}
+            <img id="MY_PROFILE_b" src="{% static 'userapp/img/profile.png' %}" alt="{{user.nickname}}">
+            {% endif %}
+            {% endif %}
+            <br><br><br>
+            <p class="p"><a class="info-input" href="{% url 'editimage' %}">프로필 사진 편집</a></p>
+            <p class="p"><a class="info-input" href="{% url 'editpw' %}">비밀번호 수정</a></p>
+
+            <hr>
+
+            <div class="edit_form">
+                <table>
+                    <tbody>
+                        <tr>
+                            <td>아이디</td>
+                            <td><input type="text" class="form-control" id="username" name="username"
+                                    value="{{ user.username }}"></td>
+                        </tr>
+                        <tr>
+                            <td>닉네임</td>
+                            <td><input type="text" class="form-control" id="nickname" name="nickname"
+                                    value="{{ user.nickname }}"></td>
+                        </tr>
+                        <tr>
+                            <td>이메일</td>
+                            <td><input type="email" class="form-control" id="email" name="email"
+                                    value="{{ user.email }}">
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <br>
+            <input type="submit" value="저장" class="submit">
+        </form>
+    </div>
+
+</div>
+
+{% endblock %}

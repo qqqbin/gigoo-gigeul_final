@@ -1,0 +1,92 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" type="text/css" href="{% static 'main/css/base.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'challengeapp/css/detailch.css' %}" />
+<!-- <link rel="stylesheet" type="text/css" href="{% static 'challengeapp/css/mypage.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'challengeapp/css/common.css' %}"/> -->
+{% endblock css %}
+
+{% block content %}
+
+<!-- <style>
+    * {
+        font-family: 'NanumSquareRound' !important;
+    }
+
+    .container {
+        width: 100%
+    }
+</style> -->
+
+<!-- 몇 글자만 보여지던 챌린지의 전문을 볼 수 있는 페이지 -->
+<!-- <section class="page-section container font-green text-center" id="challenge">
+    <div class>
+        <article class="container">
+            <div class>
+                <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0"></h2>
+            </div>
+            <div class="de-title-img-b">
+                <br> <br>
+                {% if post.challenge_img %}
+                <img src="{{ post.challenge_img.url }}" width="400" height="300" alt="profile_image">
+                <br>
+                {% endif %}
+            </div>
+            <div class="de-title-b">
+                <h3>챌린지 : {{ post.challenge_name }}</h3>
+                <h4>소개 : {{ post.introduction }}</h4>
+                <br> <br>
+                <p class="de-title-btn"><a class="my-a" href="{% url 'writepost' %}">활동 추가하기</a></p>
+                <p class="de-title-btn"><a class="my-a" href="{% url 'allchallengeandsearch' %}">이전</a></p>
+            </div>
+        </article>
+    </div>
+</section> -->
+
+
+
+<!-- 리메이크 -->
+<div class="all_box">
+    <div class="more_box">
+        <div class="title">
+            <h3>{{ post.challenge_name }}</h3>
+        </div>
+
+        <hr>
+
+        <div class="s-box">
+            <div class="ch_img">
+                {% if post.challenge_img %}
+                <img src="{{ post.challenge_img.url }}" width="550" height="450" alt="profile_image"
+                    class="profile_image">
+                {% endif %}
+            </div>
+
+            <br> <br> <br>
+
+            <div class="ss-box">
+                <div class="intro">
+                    <h4>{{ post.introduction }}</h4>
+                </div>
+
+
+                <div class="go">
+                    <div class="go-w">
+                        <a class="submit" href="{% url 'writepost' %}">활동 추가하기</a>
+                    </div>
+
+                    <div class="go-a">
+                        <a class="submit" href="{% url 'allchallengeandsearch' %}">이전</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+
+
+{% endblock %}

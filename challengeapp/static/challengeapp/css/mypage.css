@@ -1,0 +1,256 @@
+body {
+    font-family: 'NanumSquareRound';
+} 
+
+.container {
+    width: 100%;
+} 
+
+.my-a{
+    color: #8abc8d;
+}
+
+/* a태그 밑줄 없애기 */
+a:link {text-decoration: none;}
+a:visited {text-decoration: none;}
+a:hover {text-decoration: underline;}
+/* a태그 밑줄 없애기 종료 */
+
+/* aside */
+.aside-profile {
+    width: 124px;
+    height: 124px;
+
+    border-radius: 50%;
+}
+ 
+/* .aside-article {
+    width: fit-content;
+} */
+
+.my-content-article {
+    width: fit-content;
+}
+
+.my-aside-p {
+    width: 80px;
+    height: 27px;
+    margin: 30px 5px 24.5px 25px;
+    /* margin-left: 27%; */
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    font-size: 20px;
+    line-height: 1.35;
+    letter-spacing: normal;
+    text-align: left;
+    color: #8abc8d;
+}
+
+.my-aside-hr {
+    width: 150px;
+    height: 0;
+    margin: 24.5px 0 0;
+    opacity: 0.8;
+    border: solid 1px #8abc8d;
+}
+
+.my-aside-btn {
+    /* width: 108px; */
+    width: 100px;
+    height: 32px;
+    /* margin: 20px 10px 20px 10px; */
+    /* padding: 7px 37px 9px 25px; */
+    margin: 20%;
+    padding: auto;
+    border-radius: 33px;
+    border: solid 1px #8abc8d;
+    /* background-color: rgba(138, 188, 141, 0.07); */
+    /* background-color: red; */
+    color: #529c52;
+}
+.btn-intro{
+    padding-top: 13%;
+    color: #529c52;
+
+}
+
+.my-aside {
+    width: 330px;
+    height: 650px;
+    margin: 1px 0px 1px 1150px;
+    padding: 30px 74.5px 77px 75.5px;
+    background-color: #f1fbf1;
+}
+
+/* mypage */
+.my-title {
+    width: 1000px;
+    height: 257px;
+    padding: 34px 496px 16px 60px;
+    margin: 0px 50px 0px 0px;
+    background-color: #f4fbf4;
+}
+
+.my-content {
+    float: left;
+}
+
+.drop-p {
+    width: 65px;
+    height: 19px;
+    margin: 20px 1000px 7px 50px;
+    font-size: 14px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.36;
+    letter-spacing: normal;
+    text-align: left;
+    color: #8abc8d;
+    float: left;
+}
+
+.drop {
+    width: 1000px;
+    height: 100px;
+    /* padding: 0px 900px 20px 30px; */
+    float: left;
+}
+
+.dropbtn {
+    background-color: rgba(208, 233, 210, 0.28);
+    /* width: 191px;
+    height: 41px;
+    margin: 0px 1135px 41px 40px; */
+    padding: 9px 20.4px 13px 20px;
+    border-radius: 10px;
+    border: solid 2px #8abc8d;
+    color: #8abc8d;
+    margin: 0px 900px 0px 0px;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 200px;
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: #8abc8d;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.my-img {
+    width: 190px;
+    height: 190px;
+    /* margin: 0 80px 17px 0; */
+    border: solid 1px #8abc8d;
+    border-radius: 100px;
+    float: left;
+    margin-right: 20%;
+}
+
+.my-img-b {
+    width: 190px;
+    height: 190px;
+    /* margin: 0 80px 17px 0; */
+    /* border: solid 1px #8abc8d;
+    border-radius: 100px; */
+    float: left;
+}
+
+.my-exp {
+    width: 350px;
+    /* height: 189px; */
+    /* margin: 30px 236px 2px 200px; */
+    margin: 10% 100%;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.33;
+    letter-spacing: 0.15px;
+    text-align: left;
+    color: #8abc8d;
+}
+
+/* appletree */
+
+.appletree {
+    margin: -600px 200px 100px 0px;
+}
+
+/*.appletree {
+    margin: -300px 0px 100px 0px;
+}*/
+.apple{
+    width: 95px;
+    height: 95px;
+    margin: 0 20px 0 0;
+}
+
+/* new 드롭다운 */
+
+.d-btn {
+    /* background-color: #4CAF50; */
+    /* color: white; */
+    /* padding: 16px; */
+    font-size: 16px;
+    /* border: none; */
+    cursor: pointer;
+
+    background-color: rgba(208, 233, 210, 0.28);
+    width: 191px;
+    /* height: 41px;
+    margin: 0px 1135px 41px 40px; */
+    padding: 9px 20.4px 13px 20px;
+    border-radius: 10px;
+    border: solid 2px #8abc8d;
+    color: #8abc8d;
+    margin: 0px 900px 0px 0px;
+}
+.d-down {
+    position: relative;
+    display: inline-block;
+}
+.d-con {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+.d-con a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+.d-con a:hover {
+    background-color: #f1f1f1
+}
+.d-down:hover .d-con {
+    display: block;
+}
+.d-down:hover .d-btn {
+    background-color: #3e8e41;
+    color: white;
+}
+/* new 드롭 종료 */
+
+
+
+
+.allbox{
+    margin: 5%;
+}

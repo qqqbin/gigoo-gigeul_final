@@ -1,0 +1,59 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" type="text/css" href="{% static 'main/css/base.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'userapp/css/signin.css' %}" />
+{% endblock css %}
+
+<!-- 소셜 로그인 관련 -->
+{% load socialaccount %}
+{% providers_media_js %}
+
+{% block content %}
+
+<div class="all_box">
+
+    <div class="signin_intro">
+        <h1 class="signin">LOGIN</h1>
+        <hr>
+    </div>
+
+    <div class="login_form">
+        <form method="POST" action='/userapp/signin'>
+            {% csrf_token %}
+            <input class="id_pw" type="text" placeholder="ID" name="username" maxlength="150" required=""
+                id="id_username"><br><br>
+            <input class="id_pw" type="password" placeholder="PassWord" name="password" maxlength="128" required=""
+                id="id_password"><br><br><br>
+
+            <button type="submit" value="submit" class="in-in">로그인</button>
+        </form>
+    </div>
+
+    <hr>
+    <br>
+
+    <div class="box">
+        <div class="sns_login">
+            <p class="intro">기존에 사용하던 계정이 있다면?</p>
+            <a href="{% provider_login_url 'google' %}"><img class="social-img2"
+                    src="{% static 'userapp/img/구글.png' %}"></a>
+            <br>
+            <a href="{% provider_login_url 'naver' %}"><img class="social-img2"
+                    src="{% static 'userapp/img/네이버.png' %}"></a>
+        </div>
+
+        <br> <br>
+
+        <div class="go_signup">
+            <p class="intro">아직 계정이 없다면? <a class="signup" href="{% url 'signup' %}"> 회원가입</a></p>
+
+        </div>
+    </div>
+
+
+
+</div>
+
+{% endblock %}

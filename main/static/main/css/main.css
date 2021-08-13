@@ -1,0 +1,260 @@
+#myDIV1, #myDIV2, #myDIV3, #myDIV4{
+  display: none;
+}
+
+.userintro{
+  font-size: 1.2rem;
+  font-family: 'Cafe24SsurroundAir';
+}
+.usercount{
+  font-size: 1.0rem;
+  font-family: 'LAB디지털';
+  background-color: white;
+  background-size: 10px 20px;
+  color:#8ABC8D;
+  border-radius: 1rem;
+  border: #8ABC8D;
+  text-align: right;
+}
+
+
+
+div.grid {
+  margin-top: 20px;
+  padding: 10px 75px;
+  text-align: center;
+  z-index: 1000;
+}
+
+div.grid .left-arrow, div.grid .right-arrow {
+  position: relative;
+  top: 70px;
+}
+
+div.grid .left-arrow {
+  float: left;
+  width: 0;
+  height: 0;
+  margin: 0 30px 0 -50px;
+  border-top: 50px solid transparent;
+  border-bottom: 50px solid transparent;
+  border-right: 35px solid #ddd;
+}
+
+div.grid .right-arrow {
+  float: right;
+  width: 0;
+  height: 0;
+  margin: 0 -50px 0 30px;
+  border-top: 50px solid transparent;
+  border-bottom: 50px solid transparent;
+  border-left: 35px solid #ddd;
+}
+
+div.items {
+  display: inline-block;
+  z-index: 100;
+  width: 90%;
+  overflow-x: scroll;
+}
+
+div.item {
+  margin: 10px;
+  display: inline-block;
+  position: relative;
+  left: 0;  
+}
+
+.challenge{
+  width: 200px;
+}
+
+/*챌린지 목롣*/
+.carousel {
+  min-width: 900px;
+  max-width: 1236px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 48px;
+  padding-right: 48px;
+  position: relative;
+}
+
+.carousel__activator {
+  display: none;
+}
+
+.carousel__controls {
+  display: none;
+  align-items: center;
+  justify-content: space-between;
+  position: absolute;
+  top: 0;
+  right: 16px;
+  left: 16px;
+  bottom: 0;
+}
+.carousel__controls:first-of-type {
+  justify-content: flex-end;
+}
+.carousel__controls:last-of-type {
+  justify-content: flex-start;
+}
+
+.carousel__control {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  color: #3d414a;
+  border-radius: 100%;
+  box-shadow: 0 2px 10px 0 rgba(33, 34, 36, 0.3);
+  font-size: 24px;
+  height: 48px;
+  justify-content: center;
+  transition: 0.3s all;
+  width: 48px;
+  z-index: 1;
+}
+.carousel__control:hover {
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+}
+
+.carousel__activator:nth-of-type(1):checked
+~ .carousel__controls:nth-of-type(1) {
+  display: flex;
+}
+
+.carousel__activator:nth-of-type(1):checked
+~ .carousel__screen
+.carousel__track {
+  -webkit-transform: translateX(0%);
+          transform: translateX(0%);
+}
+
+.carousel__activator:nth-of-type(2):checked
+~ .carousel__controls:nth-of-type(2) {
+  display: flex;
+}
+
+.carousel__activator:nth-of-type(2):checked
+~ .carousel__screen
+.carousel__track {
+  -webkit-transform: translateX(-100%);
+          transform: translateX(-100%);
+}
+
+.carousel__activator:nth-of-type(3):checked
+~ .carousel__controls:nth-of-type(3) {
+  display: flex;
+}
+
+.carousel__activator:nth-of-type(3):checked
+~ .carousel__screen
+.carousel__track {
+  -webkit-transform: translateX(-200%);
+          transform: translateX(-200%);
+}
+
+.carousel__activator:nth-of-type(4):checked
+~ .carousel__controls:nth-of-type(4) {
+  display: flex;
+}
+
+.carousel__activator:nth-of-type(4):checked
+~ .carousel__screen
+.carousel__track {
+  -webkit-transform: translateX(-300%);
+          transform: translateX(-300%);
+}
+
+.carousel__activator:nth-of-type(5):checked
+~ .carousel__controls:nth-of-type(5) {
+  display: flex;
+}
+
+.carousel__activator:nth-of-type(5):checked
+~ .carousel__screen
+.carousel__track {
+  -webkit-transform: translateX(-400%);
+          transform: translateX(-400%);
+}
+
+.carousel__activator:nth-of-type(6):checked
+~ .carousel__controls:nth-of-type(6) {
+  display: flex;
+}
+
+.carousel__activator:nth-of-type(6):checked
+~ .carousel__screen
+.carousel__track {
+  -webkit-transform: translateX(-500%);
+          transform: translateX(-500%);
+}
+
+.carousel__screen {
+  overflow: hidden;
+  margin-left: -16px;
+  margin-right: -16px;
+}
+
+.carousel__track {
+  font-size: 0;
+  transition: all 0.3s ease 0s;
+  white-space: nowrap;
+  -webkit-overflow-scrolling: touch;
+}
+
+.carousel__item {
+  display: inline-flex;
+  padding-left: 16px;
+  padding-right: 16px;
+  vertical-align: top;
+  white-space: normal;
+}
+
+.carousel__item--desktop-in-3 {
+  width: 33.3333333333%;
+}
+
+@media screen and (max-width: 1023px) {
+  .carousel {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .carousel__activator:nth-of-type(n):checked ~ .carousel__controls:nth-of-type(n) {
+    display: none;
+  }
+  .carousel__activator:nth-of-type(n):checked ~ .carousel__screen .carousel__track {
+    -webkit-transform: none;
+            transform: none;
+  }
+
+  .carousel__screen {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .carousel__track {
+    overflow-x: auto;
+    width: auto;
+    padding-left: 48px;
+    padding-right: 48px;
+  }
+  .carousel__item--tablet-in-2 {
+    width: 45%;
+  }
+}
+@media screen and (max-width: 650px) {
+  .carousel__track {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .carousel__item--mobile-in-1 {
+    width: 70%;
+  }
+}
+/*챌린지 이미지 종료*/

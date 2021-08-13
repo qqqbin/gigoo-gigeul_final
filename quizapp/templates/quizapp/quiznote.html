@@ -1,0 +1,232 @@
+{% extends 'main/base.html' %} 
+{% load static %} 
+
+{% block css %} 
+<link rel="stylesheet" type="text/css" href="{% static 'main/css/base.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'main/css/main.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'challengeapp/css/actdetail.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'quizapp/css/quiznote.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'challengeapp/css/mypage.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'challengeapp/css/common.css' %}"/>
+{% endblock css %} 
+
+{% block content %} 
+
+
+<section class="page-section container font-green text-center font" id="challenge">
+    <div class>
+        <article class>
+            <div class="container">
+                <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0"></h2>
+            </div>
+        </article>
+
+        <article class="act-content-article container">
+            <div class="my-content">
+                <div class="act-title">
+                  <div class="act-img-b">
+                    <!-- 챌린지 대표사진 보이기 -->
+                    {{ activity.activity_img }}
+                    <img class="act-img" src="{% static 'challengeapp/img/quiz_logo.png' %}" alt="?">
+                    <!-- 챌린지 설명 보이기-->
+                    <div class="act-exp" style="font-family: 'yg-jalnan';">
+                      <h4>환경 퀴즈 노트</h4>
+                    </div>
+                    
+
+                  </div>
+                  
+                </div>
+                <div class="">
+                  <a class="de-title-btn" href="{% url 'quiz' %}">퀴즈 풀러가기</a>
+                </div>
+                <hr class="act-hr">
+            </div>
+    </article>
+    
+
+        <article class="de-content-article container"> 
+
+          
+            <div class="de-img-b">
+                <!-- <img class src="{% static 'challengeapp/img/mypage-tree.png' %}" alt="tree"> -->
+                <div class="rt-container">
+                    <div class="col-rt-12">
+                        <div class='demo-container'>
+                            <div class='carousel_act'>
+                              <input checked='checked' class='carousel__activator' id='carousel-slide-activator-1' name='carousel' type='radio'>
+                              <input class='carousel__activator' id='carousel-slide-activator-2' name='carousel' type='radio'>
+                              <input class='carousel__activator' id='carousel-slide-activator-3' name='carousel' type='radio'>
+
+                              <div class='carousel__screen act-b'>
+                                <div class='carousel__track'>
+                                  <!-- 챌린지 활동 모두 보이기 -->
+                                  <form method="POST">
+                                  {% csrf_token %}
+                                  <div class='carousel__item carousel__item--mobile-in-1 carousel__item--tablet-in-2 carousel__item--desktop-in-3'>
+                                      <div class="de-chimg-b">
+                                          <img style="width: 355px; height: 260px;" src="{% static 'challengeapp/img/quiz1.png' %}">
+                                          <div class="de-chcon-b"  style="text-align : center;">
+                                          <p class="de-chcon-p1" style="font-size: 15px;">Q.달걀 껍질은 일반쓰레기임으로
+                                            <br>일반 종량제 봉투에 담아 버려야 한다.</p></a>
+                                          <img style="width: 18px;" src="{% static 'challengeapp/img/O.png' %}">
+                                          <br>
+                                          <a class="btn btn-outline-light" href="{% url 'detailquiznote' %}">
+                                            더보기
+                                        </a>
+                                        </div>
+                                      </div>
+                                  </div>
+
+                                  <div class='carousel__item carousel__item--mobile-in-1 carousel__item--tablet-in-2 carousel__item--desktop-in-3'>
+                                    <div class="de-chimg-b">
+                                        <img style="width: 355px; height: 260px;" src="{% static 'challengeapp/img/quiz2.png' %}">
+                                        <div class="de-chcon-b"  style="text-align : center;">
+                                        <p class="de-chcon-p1" style="font-size: 15px;">Q.
+                                          플라스틱 용기에
+                                          조금이라도 비닐이 붙어있으면 <br>
+                                          재활용이 어렵다.</p></a>
+                                        <img style="width: 18px;" src="{% static 'challengeapp/img/X.png' %}">
+                                        <br>
+                                        <a class="btn btn-outline-light" href="{% url 'detailquiznote' %}">
+                                          더보기
+                                      </a>
+                                      </div>
+                                    </div>
+                                </div>
+
+                                <div class='carousel__item carousel__item--mobile-in-1 carousel__item--tablet-in-2 carousel__item--desktop-in-3'>
+                                  <div class="de-chimg-b">
+                                      <img style="width: 355px; height: 260px;" src="{% static 'challengeapp/img/quiz3.png' %}">
+                                      <div class="de-chcon-b"  style="text-align : center;">
+                                      <p class="de-chcon-p1" style="font-size: 15px;">Q.
+                                        화분은 일반쓰레기다.</p></a>
+                                      <img style="width: 18px;" src="{% static 'challengeapp/img/O.png' %}">
+                                      <br>
+                                      <a class="btn btn-outline-light" href="{% url 'detailquiznote' %}">
+                                        더보기
+                                    </a>
+                                    </div>
+                                  </div>
+                                </div>
+
+                                <div class='carousel__item carousel__item--mobile-in-1 carousel__item--tablet-in-2 carousel__item--desktop-in-3'>
+                                  <div class="de-chimg-b">
+                                      <img style="width: 355px; height: 260px;" src="{% static 'challengeapp/img/quiz4.png' %}">
+                                      <div class="de-chcon-b"  style="text-align : center;">
+                                      <p class="de-chcon-p1" style="font-size: 15px;">Q.
+                                        고추장, 간장, 쌈장 등 장류는
+                                        음식물 쓰레기다.</p></a>
+                                      <img style="width: 18px;" src="{% static 'challengeapp/img/X.png' %}">
+                                      <br>
+                                      <a class="btn btn-outline-light" href="{% url 'detailquiznote' %}">
+                                        더보기
+                                    </a>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class='carousel__item carousel__item--mobile-in-1 carousel__item--tablet-in-2 carousel__item--desktop-in-3'>
+                                  <div class="de-chimg-b">
+                                      <img style="width: 355px; height: 260px;" src="{% static 'challengeapp/img/quiz5.png' %}">
+                                      <div class="de-chcon-b"  style="text-align : center;">
+                                      <p class="de-chcon-p1" style="font-size: 15px;">Q.
+                                        패스트푸드 음료컵의 뚜껑과 빨대는<br>
+                                        모두 플라스틱에 포함되지 않는다.</p></a>
+                                      <img style="width: 18px;" src="{% static 'challengeapp/img/O.png' %}">
+                                      <br>
+                                      <a class="btn btn-outline-light" href="{% url 'detailquiznote' %}">
+                                        더보기
+                                    </a>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class='carousel__item carousel__item--mobile-in-1 carousel__item--tablet-in-2 carousel__item--desktop-in-3'>
+                                  <div class="de-chimg-b">
+                                      <img style="width: 355px; height: 260px;" src="{% static 'challengeapp/img/quiz6.png' %}">
+                                      <div class="de-chcon-b"  style="text-align : center;">
+                                      <p class="de-chcon-p1" style="font-size: 15px;">Q.
+                                        칫솔은 플라스틱 재활용 쓰레기다.</p></a>
+                                      <img style="width: 18px;" src="{% static 'challengeapp/img/X.png' %}">
+                                      <br>
+                                      <a class="btn btn-outline-light" href="{% url 'detailquiznote' %}">
+                                        더보기
+                                    </a>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class='carousel__item carousel__item--mobile-in-1 carousel__item--tablet-in-2 carousel__item--desktop-in-3'>
+                                  <div class="de-chimg-b">
+                                      <img style="width: 355px; height: 260px;" src="{% static 'challengeapp/img/quiz7.png' %}">
+                                      <div class="de-chcon-b"  style="text-align : center;">
+                                      <p class="de-chcon-p1" style="font-size: 15px;">Q.
+                                        깨진 유리병은 유리병 재활용이 아니라<BR>
+                                        신문지등에 싸서 일반쓰레기로
+                                        버려야 한다.</p></a>
+                                      <img style="width: 18px;" src="{% static 'challengeapp/img/O.png' %}">
+                                      <br>
+                                      <a class="btn btn-outline-light" href="{% url 'detailquiznote' %}">
+                                        더보기
+                                    </a>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class='carousel__item carousel__item--mobile-in-1 carousel__item--tablet-in-2 carousel__item--desktop-in-3'>
+                                  <div class="de-chimg-b">
+                                      <img style="width: 355px; height: 260px;" src="{% static 'challengeapp/img/quiz8.png' %}">
+                                      <div class="de-chcon-b"  style="text-align : center;">
+                                      <p class="de-chcon-p1" style="font-size: 15px;">Q.
+                                        도자기, 사기는
+                                        재활용 쓰레기다.</p></a>
+                                      <img style="width: 18px;" src="{% static 'challengeapp/img/X.png' %}">
+                                      <br>
+                                      <a class="btn btn-outline-light" href="{% url 'detailquiznote' %}">
+                                        더보기
+                                    </a>
+                                    </div>
+                                  </div>
+                                </div>
+
+                                  </form>
+
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                  </div>
+              </div>
+            </div>
+          
+
+        </article>
+        <br><br>
+        
+
+        <!-- mypage, badge, activity가 사용하는 aside -->
+        <article class="aside-article">
+          <div class="my-aside">
+              <div class="my">
+                  <!-- 설정한 프로필 사진 보이기 -->
+                  <img class="aside-profile" src="{% static 'challengeapp/img/profile.png' %}" alt="{{user.nickname}}">
+                  <p class="my-aside-p">{{ user.nickname }}user.nickname</p>
+              </div>
+              <hr class="my-aside-hr">
+              <div class="my-aside-b">
+                  <!-- <button type="button" class="my-aside-btn">Profile</button>
+                  <button type="button" class="my-aside-btn">Quiz note</button>
+                  <button type="button" class="my-aside-btn">Badge</button>
+                  <button type="button" class="my-aside-btn">Activity</button> -->
+                  <p class="my-aside-btn"><a class="my-a" href="{% url 'editinfo' %}">Profile</a></p>
+                  <p class="my-aside-btn"><a class="my-a" href="{% url 'quiznote' %}">Quiznote</a></p>
+                  <p class="my-aside-btn"><a class="my-a" href="{% url 'badge' %}">Badge</a></p>
+                  <p class="my-aside-btn"><a class="my-a" href="{% url 'activity' %}">Activity</a></p>
+
+              </div>
+          </div>
+      </article>
+
+
+    </div>
+</section> 
+
+
+{% endblock %}

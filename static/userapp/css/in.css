@@ -1,0 +1,92 @@
+.font {
+    font-family:  'yg-jalnan';
+    text-align: center;
+}
+
+.in-left {
+    text-align: left;
+}
+
+.social-img {
+    background-color: white;
+    border-color: unset;
+}
+
+.social-img2 {
+    height: 50px;
+    width: 50px;
+    background-color: white;
+    border-color: unset;
+}
+
+/* a태그 밑줄 없애기 */
+a:link {text-decoration: none;}
+a:visited {text-decoration: none;}
+a:hover {text-decoration: underline;}
+/* a태그 밑줄 없애기 종료 */
+
+.in-id {
+    width: 505px;
+    height: 85px;
+    /* margin: 20px 689px 19px 726px; */
+    padding: 25px 370px 25px 30px;
+    border: solid 1px #1d5b22;
+    background-color: #ffffff;
+    font-size: 35px;
+}
+
+.in-pw {
+    width: 505px;
+    height: 85px;
+    /* margin: 19px 689px 48.5px 726px; */
+    padding: 26.5px 335px 23.5px 30px;
+    border: solid 1px #1d5b22;
+    background-color: #ffffff;
+    font-size: 35px;
+}
+
+.in-in {
+    width: 505px;
+    height: 79px;
+    /* margin: 48.5px 688.8px 19px 726.3px; */
+    /* padding: 24px 200px 20px; */
+    border-radius: 4px;
+    background-color: #8abc8d;
+    font-size: 35px;
+    color: white;
+    border-style: none;
+}
+
+.in-l {
+    /* width: 226px; */
+    height: 47px;
+    /* margin: 35px 11.9px 107.5px 726.3px; */
+    padding: 11px 63px;
+    border: solid 1px #8abc8d;
+    background-color: #ffffff;
+    color: #8abc8d;
+}
+
+.in-r {
+    width: 226px;
+    height: 47px;
+    /* margin: 35px 688.8px 107.5px 15px; */
+    padding: 11px 34px 11px 35px;
+    border: solid 1px #8abc8d;
+    background-color: #ffffff;
+    color: #8abc8d;
+}
+
+.in-social {
+    /* width: 287px; */
+    height: 30px;
+    /* margin: 19px 797.8px 19px 835.3px; */
+    font-size: 30px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1;
+    letter-spacing: normal;
+    /* text-align: left; */
+    color: rgba(127, 127, 127, 0.73);
+}

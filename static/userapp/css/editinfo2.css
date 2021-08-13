@@ -1,0 +1,82 @@
+body {
+    font-family: 'NanumSquareRound' !important;
+    color: #8abc8d;
+}
+
+p {
+    margin-top: 50px;
+}
+
+input {
+    width: auto;
+    height: 27px;
+    font-weight: 300;
+    font-stretch: normal; 
+    font-style: normal;
+    line-height: 1.35;
+    letter-spacing: 0.2px;
+    color: #8abc8d;
+}
+
+.hr-info2 {
+    width: 500px;
+    height: 0;
+    margin: revert;
+}
+
+.profile-back2 {
+    width: 194px;
+    height: 194px;
+    margin-left: 450px;
+    margin: auto;
+    padding: 53px 60.7px 64px 56.3px;
+    background-color: #8abc8d;
+    border-radius: 100px;
+}
+
+.table-info2 {
+    border-color:rgba(255, 255, 255, 0);
+}
+
+table {
+    border-collapse: unset;
+    margin: auto;
+}
+
+th {
+    text-align: right;
+}
+
+.th-color {
+    height: 49px;
+    margin: 0 1px 0 0;
+    background-color: #aed8b2;
+    color: white;
+    z-index: 2;
+}
+
+.td-color {
+    width: 299px;
+    height: 49px;
+    background-color: #e0eee1;
+    z-index: 1;
+    border-style: none;
+    
+}
+
+.btn-info {
+    width: auto;
+    height: 32px;
+    padding: 7px 36px 9px 35px;
+    border-radius: 33px;
+    border: solid 1px #8abc8d;
+    background-color: rgba(138, 188, 141, 0.07);
+}
+
+.back {
+    width: 1383px;
+    height: auto;
+    padding: 68px 110px 65px 125px;
+    background-color: #f4fbf4;
+    z-index: 1;
+}

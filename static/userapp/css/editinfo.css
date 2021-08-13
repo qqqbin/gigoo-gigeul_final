@@ -1,0 +1,100 @@
+body {
+    font-family: 'NanumSquareRound';
+    color: #8abc8d;
+}
+
+table {
+    width: 800px;
+    height: 200px;
+}
+
+p {
+    margin-top: 50px;
+}
+
+input {
+    width: 150px;
+    height: 27px;
+    font-weight: 300;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.35;
+    letter-spacing: 0.2px;
+    color: #8abc8d;
+}
+
+.back {
+    width: 1383px;
+    height: 533px;
+    padding: 68px 110px 65px 125px;
+    background-color: #f4fbf4;
+    z-index: 1;
+}
+
+/* .profile-back {
+    width: 194px;
+    height: 194px;
+    padding: 55px 5px;
+    background-color: #8abc8d;
+    z-index: 2;
+    border-radius: 100px;
+} */
+
+#MY_PROFILE_b {
+    width: 194px;
+    height: 194px;
+    z-index: 2;
+    border-radius: 100px;
+}
+
+.column-left {
+    float: left;
+}
+
+table {
+    border-collapse: unset;
+    margin: auto;
+}
+
+th {
+    text-align: right;
+    font-size: 25px;
+}
+td{
+    font-size: 20px;
+}
+
+.info-input {
+    border-right-style: none;
+    border-top-style: none;
+    border-bottom-style: none;
+    border-left-style: none;
+    /* border-color: #8abc8d; */
+    background-color: unset;
+    color: #8abc8d;
+    font-size: 20px;
+}
+
+.hr {
+    width: 0;
+    height: 400px;
+    opacity: 0.8;
+    border: solid 1px #8abc8d;
+}
+
+.btn-right{
+    width: 108px;
+    height: 32px;
+    /* margin: 215px 10px 19px 1426px; */
+    padding: 7px 29px 9px 28px;
+    border-radius: 33px;
+    border: solid 1px #8abc8d;
+    background-color: rgba(138, 188, 141, 0.07);
+    color: #8abc8d;
+}
+
+/* a태그 밑줄 없애기 */
+a:link {text-decoration: none;}
+a:visited {text-decoration: none;}
+a:hover {text-decoration: underline;}
+/* a태그 밑줄 없애기 종료 */

@@ -1,0 +1,122 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" type="text/css" href="{% static 'main/css/base.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'main/css/main.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'challengeapp/css/actdetail.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'challengeapp/css/activity.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'challengeapp/css/mypage.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'challengeapp/css/common.css' %}" />
+{% endblock css %}
+
+{% block content %}
+<section class="page-section container font-green text-center font" id="challenge">
+  <div class>
+    <article class>
+      <div class="container">
+        <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0"></h2>
+      </div>
+    </article>
+
+    <article class="act-content-article container">
+
+      <div class="my-content">
+        <div class="act-title">
+          <div class="act-img-b">
+            <!-- 챌린지 대표사진 보이기 -->
+            {{ activity.activity_img }}
+            <img class="act-img" src="{% static 'challengeapp/img/badge.png' %}" alt="?">
+            <!-- 챌린지 설명 보이기-->
+            <div class="act-exp">
+              <h4>{{ user.nickname }} 님의 <br>환경보호 활동🌳</h4>
+              <br>
+              <a class="de-title-btn" href="{% url 'writepost' %}">활동 추가하기</a>
+            </div>
+          </div>
+        </div>
+        <hr class="act-hr">
+      </div>
+
+      <!-- 챌린지 목록 드롭버튼 -->
+
+      <div class="dropdown" style="float: left; margin-bottom: 30px;">
+        <button class="dropbtn"type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">챌린지 선택 ▼</button>
+        <div class="dropdown-menu dropdown-content" aria-labelledby="dropdownMenuButton1">
+          {% for challenge in challenges.all %}
+          <a class="dropdown-item" href="#"> {{ challenge.challenge_name }} </a>
+          {% endfor %}
+        </div>
+      </div>
+    </article>
+  
+
+    <article class="de-content-article container">
+      <div class="de-img-b">
+        <div class="rt-container">
+          <div class="col-rt-12">
+            <div class='demo-container'>
+              <div class='carousel_act'>
+                <input checked='checked' class='carousel__activator' id='carousel-slide-activator-1' name='carousel'
+                  type='radio'>
+                <div class='carousel__screen act-b'>
+                  <div class='carousel__track'>
+
+                    <br><br>
+                    <!-- 챌린지 활동 모두 보이기 -->
+                    <form method="POST">
+                      {% for posts in posts.all %} 
+                      <div class='carousel__item carousel__item--mobile-in-1 carousel__item--tablet-in-2 carousel__item--desktop-in-3'>
+                        <div class="de-chimg-b">
+                          {% if posts.activity_img %}
+                          <a href="{% url 'activitydetail' posts.activity_title %}">
+                            <img src =" {{ posts.activity_img.url }}" width="354" height="298">
+                          </a>
+                          <div class="de-chcon-b">
+                            <!-- a태그 눌러서 액티비티 디테일 페이지로 이동 -->
+                            <a href="#!">
+                             <p class="de-chcon-p1" style="font-size: 20px;"><a style="font-size: 30px;" href="{% url 'activitydetail' posts.activity_title %}"> {{ posts.challenge_id }}</a> 
+                                <br> {{ posts.activity_title }} </p>
+                            </a>
+                          </div>
+                        </div>
+                        {% endif %}
+                        {% endfor %}                        
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+    <br><br>
+
+
+    <!-- mypage, badge, activity가 사용하는 aside -->
+    <article class="aside-article">
+      <div class="my-aside">
+        <div class="my">
+          <!-- 설정한 프로필 사진 보이기 -->
+          <img class="aside-profile my-a" src="{% static 'challengeapp/img/profile.png' %}" alt="{{user.nickname}}">
+          <p><br>{{ user.nickname }}님<br>
+          반갑습니다! 🤗</p>
+          <!--<hr class="my-aside-hr">-->
+        </div>
+        
+        <div class="my-aside-b">
+          <p class="my-aside-btn"><a class="my-a" href="{% url 'editinfo' %}">Profile</a></p>
+          <p class="my-aside-btn"><a class="my-a" href="{% url 'quiznote' %}">Quiznote</a></p>
+          <p class="my-aside-btn"><a class="my-a" href="{% url 'badge' %}">Badge</a></p>
+          <p class="my-aside-btn"><a class="my-a" href="{% url 'activity' %}">Activity</a></p>
+        </div>
+      </div>
+    </article>
+
+
+  </div>
+</section>
+
+{% endblock %}

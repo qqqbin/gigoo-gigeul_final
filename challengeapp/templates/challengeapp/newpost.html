@@ -1,0 +1,88 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" type="text/css" href="{% static 'main/css/base.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'challengeapp/css/styles.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'challengeapp/css/newpost.css' %}" />
+{% endblock css %}
+
+{% block content %}
+
+
+
+<section class="page-section container font-green text-center font" id="challenge">
+    <div class>
+        <article class>
+            <div class="container">
+                <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0"></h2>
+            </div>
+        </article>
+        <article class="new-content-article">
+            <div class="container">
+                <div class="container new-content clearfix">
+                    <div class="container new-content-b">
+                        <div class="title">
+                            <h1>활동 내역 추가</h1>
+                        </div>
+                        <hr>
+                        <form method="POST">
+                            {% csrf_token %}
+                            <div>
+                                <label for="activity_title">챌린지 선택</label>
+                                <br>
+                                <table>
+                                    {{form.challenge_id}}
+                                </table>
+                            </div>
+                            <br>
+                            <div>
+                                <label for="activity_title">제목</label>
+                                <input type="text" class="form-control" id="activity_title" name="activity_title"
+                                    placeholder="제목을 입력하세요">
+                            </div>
+                            <br>
+                            <div>
+                                <label for="activity_title">날짜</label>
+                                <input type="text" style="width: 200px; display: inline;" class="form-control"
+                                    id="activity_date" name="activity_date" placeholder="날짜를 입력하세요">
+                            </div>
+                            <br>
+
+                            <div class="new-img">
+                                <!-- 사진 선택했을 경우 보이기   -->
+
+                                <!-- else  -->
+                                <img class="new-img1" src="{% static 'challengeapp/img/newpost.png' %}" alt="?">
+
+                                <br>
+                                <input type="file" id="activity_img" name="activity_img" class="file new-file"  accept="image/*">
+
+
+                            </div>
+                            <br>
+
+                            <div>
+                                <label for="activity_title">활동 내용</label>
+                                <input type="text" style="height: 500px;" class="form-control" id="activity_title"
+                                    name="activity_title" placeholder="내용을 입력하세요">
+                            </div>
+                            <br><br>
+                            <button class="new-submit" type="submit">작성</button>
+                        </form>
+
+
+                    </div>
+
+
+
+                </div>
+
+            </div>
+        </article>
+
+    </div>
+</section>
+
+
+{% endblock %}

@@ -1,0 +1,122 @@
+* {
+  font-family: 'NanumSquareRound' !important;
+}
+ 
+ .new-title {
+    width: 245px;
+    height: 67px;
+    margin: 152px 647px 25px 95px;
+    font-weight: bolder;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.34;
+    letter-spacing: 0.5px;
+    text-align: left;
+    color: #8abc8d;
+ }
+ .dropbtn{
+    width: 191px;
+    height: 41px;
+    /* margin: 7px 0 0;
+    padding: 9px 20.4px 13px 20px;
+    border-radius: 10px;
+    border: solid 2px #8abc8d;
+    background-color: rgba(208, 233, 210, 0.28); */
+ } 
+ .new-content-b{  
+   width: 1083px;
+   height: auto;
+   margin: 100px 418px 10px 95px;
+   padding: 90px 308px 89px;
+   background-color: #f4fbf4;
+ }
+ .new-text {
+   border-style: none;
+   background-color: #f4fbf4;
+   text-align: left;
+ }
+ p{
+    text-align: left;
+    color:white;
+ }
+ mark{
+   background-color: #8abc8d;
+   color:white;
+ }
+ .new-file {
+   margin: 10px 130px 0 0;
+   
+ }
+.new-submit{
+  width: 108px;
+  height: 32px;
+  margin: auto;
+  padding: 7px 35px 9px 36px;
+  border-radius: 33px;
+  border: solid 1px #8abc8d;
+  background-color: rgba(138, 188, 141, 0.07);
+}
+
+ .drop-p {
+  width: 65px;
+  height: 19px;
+  margin: 20px 1000px 7px 50px;
+  font-size: 14px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.36;
+  letter-spacing: normal;
+  text-align: left;
+  color: #8abc8d;
+  float: left;
+}
+ /* new 드롭다운 */
+
+.d-btn {
+  /* background-color: #4CAF50; */
+  /* color: white; */
+  /* padding: 16px; */
+  font-size: 16px;
+  /* border: none; */
+  cursor: pointer;
+
+  background-color: rgba(208, 233, 210, 0.28);
+  width: 191px;
+  /* height: 41px;
+  margin: 0px 1135px 41px 40px; */
+  padding: 9px 20.4px 13px 20px;
+  border-radius: 10px;
+  border: solid 2px #8abc8d;
+  color: #8abc8d;
+  margin: 0px 1100px 0px 0px;
+}
+.d-down {
+  position: relative;
+  display: inline-block;
+}
+.d-con {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+.d-con a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+.d-con a:hover {
+  background-color: #f1f1f1
+}
+.d-down:hover .d-con {
+  display: block;
+}
+.d-down:hover .d-btn {
+  background-color: #3e8e41;
+  color: white;
+}
+/* new 드롭 종료 */

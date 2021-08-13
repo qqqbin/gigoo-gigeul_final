@@ -1,0 +1,86 @@
+{% extends 'main/base.html' %} 
+{% load static %} 
+
+{% block css %} 
+<link rel="stylesheet" type="text/css" href="{% static 'main/css/base.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'challengeapp/css/addch.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'challengeapp/css/common.css' %}"/>
+{% endblock css %} 
+
+{% block content %} 
+
+
+<section class="page-section container font-green text-center font" id="challenge">
+    <div class>
+        <article class>
+            <div class="container">
+                <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0"></h2>
+            </div>
+        </article>
+
+        <article class>
+            <div class="container">
+            <form method="POST" enctype="multipart/form-data">
+                {% csrf_token %}   
+                {{ error_message }}      
+                <table class="table-center">
+                    <tr>
+                    <th class="add-th">제목</th>
+                    <td class="add-td"><input id="id" type="text" class="add-title add-input" placeholder="챌린지의 이름을 적어주세요" name="challenge_name"></td>
+
+                    </tr>
+                    <tr>
+                    <th class="add-th">내용</th>
+                    <td class="add-td"><textarea rows="20" cols="100" placeholder="챌린지의 내용을 적어주세요(참여 방법, 목적, 인증 방법 등)" name="introduction"></textarea></td>
+
+                    </tr>
+                    <tr>
+                    <th class="add-th">대표사진</th>
+                    <td  class="p-img add-td">
+                    <input type="file" class="file add-input" name="challenge_img">    
+                    <!-- 사진을 추가했다면 추가한 사진 보이기 & 이미지 크기는 최대 600x600  -->
+                    {% if challenge.challenge_img %} 
+                        <img class="img-max" src="{{ challenge.challenge_img.url }}" >
+                    {% else %} 
+                        <!-- <img src="{% static 'challengeapp/img/addchallenge-p.png' %}"> -->
+                        <img class="img-max" src="{% static 'challengeapp/img/addchallenge-p.png' %}" >
+                    {% endif %}
+                     
+                    </td>  
+                    </tr>
+                    <tr>
+                    <th class="add-th">기간</th>
+                    <td class="add-td">
+                        <input name="term" type="checkbox" value="2주" class="check add-input">2주
+                        <input name="term" type="checkbox" value="1개월" class="check add-input">1개월
+                        <input name="term" type="checkbox" value="3개월" class="check add-input">3개월
+                    </td>
+                    </tr>
+
+                    <!-- <tr>
+                        <th><label for="id_categories">Categories:</label></th><td><select name="categories" id="id_categories" multiple>
+                        {% for category in categories.all %}
+                            <option value="">{{category.name}}</option>
+                        {% endfor %} 
+                      </select></td>
+                    </tr> -->
+                </table>
+                <br>
+                <!-- <table>
+                    {% csrf_token %}
+                    {{form.as_table}} 
+                </table> -->
+
+                <p><a href="{% url 'challengecategory' %}"> 카테고리 추가하기 </a></p>
+                <button type="submit" class="add-btn">신청하기</button>
+                <!-- <button type="submit" class="add-btn">미리보기</button>
+                <button type="submit" class="add-btn">임시저장</button> -->
+                <!-- <button type="submit" class="add-btn">취소</button> -->
+            </form>
+            </div>
+        </article>        
+    </div>
+</section>
+
+
+{% endblock %}

@@ -1,0 +1,43 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" type="text/css" href="{% static 'main/css/base.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'userapp/css/jw_editpw.css' %}" />
+{% endblock css %}
+
+{% block content %}
+
+<!-- 비밀번호 칸을 공란으로 하고 저장하게 되면 다시는 로그인할 수 없음... -->
+
+<div class="all_box">
+    <div class="edit_box">
+        <form action="" method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="editpw_intro">
+                <h1 class="editpw">NEW PASSWORD</h1>
+            </div>
+            <hr>
+
+            <div class="edit_form">
+                <table>
+                    <tbody>
+                        <tr>
+                            <td>새 비밀번호</td>
+                            <td> <input type="password" class="td-color edit-input" id="pw" name="pw"
+                                    placeholder="변경할 비밀번호를 입력하세요."></td>
+                        </tr>
+                        <tr>
+                            ** 비밀번호를 재설정할 시, 다시 로그인 해야 합니다.
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <br>
+            <input type="submit" value="저장" class="submit">
+        </form>
+    </div>
+
+</div>
+
+{% endblock %}

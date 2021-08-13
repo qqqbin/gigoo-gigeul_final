@@ -1,0 +1,76 @@
+*{
+    text-align: center;
+}
+
+body {
+    font-family: 'NanumSquareRound' !important;
+    color: #8abc8d;
+}
+
+.all_box{
+    padding: 10% 30%;
+}
+
+.edit_box{
+    padding: 10% 10%;
+    background-color: #f4fbf4;
+}
+
+hr{
+    margin: 10%;
+    color: #8abc8d;
+}
+
+a:link {text-decoration: none;}
+a:visited {text-decoration: none;}
+a:hover {text-decoration: none; color:#1d5b22;}
+
+#MY_PROFILE_b {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+}
+
+/* 프로필 사진 편집 및 비밀번호 수정 연결 링크 */
+.info-input{
+    font-size: 17px;
+    color: #8abc8d;
+}
+
+table {
+    margin-left: auto;
+    margin-right: auto;
+}
+td{
+    color:#8abc8d;
+    padding: 3%;
+    width: 100px;
+    font-size: 18px;
+}
+
+input{
+    width: 270px;
+    height: 40px;
+    border: none;
+    border-radius: 4px;
+    color: #1d5b22;
+    background-color: #ffffffa8;
+}
+input:focus{
+    outline: none;
+}
+
+.submit{
+    width: 130px;
+    height: 40px;
+    font-size: 17px;
+    margin-top: 8%;
+    border-radius: 33px;
+    border: solid 1px #8abc8d;
+    background-color: rgba(138, 188, 141, 0.07);
+    color: #8abc8d;
+}
+.submit:hover{
+    background-color: rgba(162, 211, 165, 0.548);
+    color: white;
+}

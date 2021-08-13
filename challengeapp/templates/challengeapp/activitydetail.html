@@ -1,0 +1,99 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" type="text/css" href="{% static 'main/css/base.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'main/css/main.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'challengeapp/css/actdetail.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'challengeapp/css/common.css' %}" />
+{% endblock css %}
+
+{% block content %}
+
+<section class="page-section container font-green text-center font" id="challenge">
+    <div class>
+        <article class>
+            <div class="container">
+                <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0"></h2>
+            </div>
+        </article>
+
+        <article class="act-content-article container">
+            <div class="my-content">
+                <div class="act-title">
+                    <div class="act-img-b">
+
+                        <img class="act-img" src="{% static 'challengeapp/img/badge.png' %}" alt="?">
+                        <div class="act-exp">
+                            <h3>{{ post.activity_title }}</h3>
+                            <p>{{ post.challenge_id }}</p>
+                        </div>
+
+                    </div>
+                </div>
+                <hr class="act-hr">
+            </div>
+
+        </article>
+
+        <!-- 챌린지 활동 자세하게 보기 -->
+        <article class="my-content-article">
+            <div class="container my-content clearfix">
+                <div class="act-content-b">
+                    <div class="section container px-4 px-lg-5">
+                        <input type="radio" name="slide" id="slide01" checked>
+
+                        <div class="slide-wrap">
+                            <ul class="slidelist">
+                                <li>
+                                    <a>
+                                        {% if post.activity_img %}
+                                        <img src=" {{ post.activity_img.url }}" style="  width: 500px;">
+                                        {% endif %}
+                                        <div class="textbox">
+                                            <h3 style="font-size: 30px;">{{ post.activity_title }}</h3>
+                                            <p style="font-size: 20px;">{{ post.activity_date }}</p>
+                                            <p>{{ post.activity_content }}</p>
+                                        </div>
+                                    </a>
+                                </li>
+
+                            </ul>
+                        </div>
+                
+                    </div>
+                    <a class="btn btn-xl btn-outline-light" href="{% url 'postedit' post.activity_title %}"> 수정하기 </a>
+                    <a class="btn btn-xl btn-outline-light" href="{% url 'postdelete' post.activity_title %}"> 삭제하기 </a>
+                    <a class="btn btn-xl btn-outline-light" href="{% url 'activity' %}"> 돌아가기 </a>
+                </div>
+            </div>
+
+        </article>
+
+        <br><br>
+        <!-- mypage, badge, activity가 사용하는 aside -->
+        <article class="aside-article">
+            <div class="my-aside">
+                <div class="my">
+                    <!-- 설정한 프로필 사진 보이기 -->
+                    <img class="aside-profile my-a" src="{% static 'challengeapp/img/profile.png' %}"
+                        alt="{{user.nickname}}">
+                    <p><br>{{ user.nickname }}님<br>
+                        반갑습니다! 🤗</p>
+                    <!--<hr class="my-aside-hr">-->
+                </div>
+
+                <div class="my-aside-b">
+                    <p class="my-aside-btn"><a class="my-a" href="{% url 'editinfo' %}">Profile</a></p>
+                    <p class="my-aside-btn"><a class="my-a" href="{% url 'quiznote' %}">Quiznote</a></p>
+                    <p class="my-aside-btn"><a class="my-a" href="{% url 'badge' %}">Badge</a></p>
+                    <p class="my-aside-btn"><a class="my-a" href="{% url 'activity' %}">Activity</a></p>
+                </div>
+            </div>
+        </article>
+
+    </div>
+</section>
+
+
+{% endblock %}

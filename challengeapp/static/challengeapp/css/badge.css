@@ -1,0 +1,148 @@
+.font {
+    font-family: 'NanumSquareRound' !important;
+} 
+
+.my-a{
+    color: #8abc8d;
+} 
+
+/* a태그 밑줄 없애기 */
+a:link {text-decoration: none;}
+a:visited {text-decoration: none;}
+a:hover {text-decoration: underline;}
+/* a태그 밑줄 없애기 종료 */
+
+/* aside */
+.aside-profile {
+    width: 124px;
+    height: 124px;
+}
+
+/* .aside-article {
+    width: fit-content;
+} */
+
+.my-content-article {
+    width: fit-content;
+}
+
+.my-aside-p {
+    width: 80px;
+    height: 27px;
+    margin: 30px 5px 24.5px 25px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.35;
+    letter-spacing: normal;
+    text-align: left;
+    color: #8abc8d;
+}
+
+.my-aside-hr {
+    width: 150px;
+    height: 0;
+    margin: 24.5px 0 0;
+    opacity: 0.8;
+    border: solid 1px #8abc8d;
+}
+
+.my-aside-btn {
+    /* width: 108px; */
+    width: auto;
+    height: 32px;
+    margin: 20px 10px 20px 10px;
+    /* padding: 7px 37px 9px 25px; */
+    padding: auto;
+    border-radius: 33px;
+    border: solid 1px #8abc8d;
+    background-color: rgba(138, 188, 141, 0.07);
+    color: #369f36;
+}
+
+
+.my-aside {
+    width: 330px;
+    height: 650px;
+    margin: 1px 0px 1px 1150px;
+    padding: 30px 74.5px 77px 75.5px;
+    background-color: #f1fbf1;
+}
+
+
+/* badge */
+/* .badge-img1 {
+    width: 19px;
+    height: 46px;
+    margin: 84px 52px 0;
+} */
+
+.bad-img {
+    text-align: left;
+}
+
+.badge-img2 {
+    /* width: 13px;
+    height: 33px; */
+    margin: 35px 38px 0px 0px;
+}
+
+.bad-content {
+    float:left;
+} 
+
+.bad-content-b {
+    width: 1096px;
+    height: 1000px;
+    /* margin: 47px 213px 176px 236px;
+    padding: 68px 318px 65px 88px; */
+    background-color: #f4fbf4;
+    overflow: hidden;
+    margin: 0px 0px 100px 0px;
+}
+
+/* mypage.css */
+
+.my-content-article {
+    width: fit-content;
+}
+
+.my-content {
+    float: left;
+}
+
+.badge{
+    width: 114px;
+    height: 114px;
+    border: solid 1px #8abc8d;
+    border-radius: 100px;
+    margin: 15px;
+    float: left;
+}
+
+/* 툴팁 */
+.tooltip1 {
+    position: relative;
+    /* display: inline-block; */
+    float: left;
+    /* border-bottom: 1px dotted black; */
+  }
+  
+  .tooltip1 .tooltiptext1 {
+    visibility: hidden;
+    width: 120px;
+    height: 30px;
+    /* background-color: black; */
+    background-color: #369f36;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+  }
+  
+  .tooltip1:hover .tooltiptext1 {
+    visibility: visible;
+  }
+/* 툴팁 종료 */

@@ -1,0 +1,80 @@
+.font {
+    font-family: 'yg-jalnan';
+}
+
+
+/* a태그 밑줄 없애기 */
+a:link {text-decoration: none;}
+a:visited {text-decoration: none;}
+a:hover {text-decoration: underline;}
+/* a태그 밑줄 없애기 종료 */
+
+.in-left {
+    text-align: left;
+} 
+
+.pw-pw{
+    /* width: 376px; */
+    height: 82px;
+    /* margin: 41px 788px 20px 756px; */
+    padding-left: 94px;
+    padding-right: 94px;
+    border-radius: 4px;
+    background-color: #8abc8d;
+    font-size: 30px;
+    color: white;
+}
+.pw-id{
+    width: 376px;
+    height: 78px;
+    /* margin: 36.5px 788px 16px 756px; */
+    padding: 24px 265px 24px 21px;
+    border: solid 1px #707070;
+    background-color: #ffffff;
+    font-size: 30px;
+}
+.pw-em{
+    width: 376px;
+    height: 78px;
+    /* margin: 16px 788px 41px 756px; */
+    padding: 24px 265px 24px 21px;
+    border: solid 1px #707070;
+    background-color: #ffffff;
+    font-size: 30px;
+}
+.pw-in{
+    /* width: 226px;
+    height: 47px; */
+    /* margin: 41px 53px 151px 692px; */
+    /* padding-left: 63px;
+    padding-right: 63px;
+    border: solid 1px #8abc8d;
+    background-color: rgba(112, 112, 112, 0.04);
+    font-size: 25px; */
+    color: #8abc8d;
+
+    width: 226px;
+    height: 47px;
+    /* margin: 41px 53px 151px 692px; */
+    padding: 11px 63px;
+    border: solid 1px #8abc8d;
+    background-color: rgba(112, 112, 112, 0.04);
+}
+.pw-up{
+    /* width: 226px; */
+    /* height: 47px; */
+    /* margin: 41px 723px 151px 53px;
+    padding-left: 75px;
+    padding-right: 75px;
+    border: solid 1px #8abc8d;
+    background-color: rgba(112, 112, 112, 0.04);
+    font-size: 25px; */
+    color: #8abc8d;
+
+    width: 226px;
+    height: 47px;
+    /* margin: 41px 723px 151px 53px; */
+    padding: 11px 75px 11px 76px;
+    border: solid 1px #8abc8d;
+    background-color: rgba(112, 112, 112, 0.04);
+}

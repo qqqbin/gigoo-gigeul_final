@@ -1,0 +1,58 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" type="text/css" href="{% static 'main/css/base.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'userapp/css/jw_editimage.css' %}" />
+{% endblock css %}
+
+{% block content %}
+
+<div class="all_box">
+    <div class="edit_box">
+        <form action="" method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+
+            <div class="editimage_intro">
+                <h1 class="editimage">NEW PROFILE IMAGE</h1>
+            </div>
+            <hr>
+
+            <br> <br>
+            {% if user.is_authenticated %}
+            {% if user.profile_image %}
+            <img src="{{ user.profile_image.url }}" width="250" height="250" alt="profile_image" id="MY_PROFILE_b">
+            {% else %}
+            <img id="MY_PROFILE_b" src="{% static 'userapp/img/profile.png' %}" alt="{{user.nickname}}">
+            {% endif %}
+            {% endif %}
+            <br><br><br>
+
+            <div class="editimage_form">
+                <form action="" method="POST" enctype="multipart/form-data">
+                    {% csrf_token %}
+
+                    <div class="filebox">
+                        <label for="ex_file">파일 선택</label>
+                        <input type="file" id="ex_file" name="profile_image" value="{{ user.profile_image }}"
+                            accept="image/*">
+                    </div>
+
+                    <button type="submit" class="submit">저장</button>
+
+                </form>
+            </div>
+
+            <hr>
+
+            <div class="del_image">
+                <form action="" method="GET">
+                    <input type="submit" value="프로필사진 삭제" name="d" class="submit">
+                </form>
+            </div>
+        </form>
+    </div>
+
+</div>
+
+{% endblock %}
